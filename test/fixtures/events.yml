@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  online: false
+  online_event: MyString
+  venue: MyString
+  address: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  postcode: MyString
+  country: MyString
+  show_map: false
+  start: 2016-12-06 15:33:00
+  end: 2016-12-06 15:33:00
+  image: MyString
+  description: MyText
+  references: 
+  ticket_name: MyString
+  quantity: 1
+  penalty_fee: 1
+  cancellation_policy: MyString
+  public: false
+  price: 1
+
+two:
+  title: MyString
+  online: false
+  online_event: MyString
+  venue: MyString
+  address: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  postcode: MyString
+  country: MyString
+  show_map: false
+  start: 2016-12-06 15:33:00
+  end: 2016-12-06 15:33:00
+  image: MyString
+  description: MyText
+  references: 
+  ticket_name: MyString
+  quantity: 1
+  penalty_fee: 1
+  cancellation_policy: MyString
+  public: false
+  price: 1

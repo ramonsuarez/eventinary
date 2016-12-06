@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206101425) do
+ActiveRecord::Schema.define(version: 20161206143300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "offline"
+    t.string   "online_url"
+    t.string   "venue"
+    t.string   "address"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postcode"
+    t.string   "country"
+    t.boolean  "show_map"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "image"
+    t.text     "description"
+    t.string   "ticket_name"
+    t.integer  "quantity"
+    t.integer  "penalty_fee"
+    t.string   "cancellation_policy"
+    t.boolean  "public"
+    t.integer  "price"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,8 +52,8 @@ ActiveRecord::Schema.define(version: 20161206101425) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "first_name",                          null: false
-    t.string   "last_name",                           null: false
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "address"
     t.string   "phone"
     t.text     "avatar"
