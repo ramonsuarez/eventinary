@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Online:</strong>
+  <%= @event.offline %>
+</p>
+
+<p>
+  <strong>Online event:</strong>
+  <%= @event.online_url %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @event.venue %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>Address 2:</strong>
+  <%= @event.address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @event.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @event.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @event.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @event.country %>
+</p>
+
+<p>
+  <strong>Show map:</strong>
+  <%= @event.show_map %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @event.end %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @event.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Ticket name:</strong>
+  <%= @event.ticket_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @event.quantity %>
+</p>
+
+<p>
+  <strong>Penalty fee:</strong>
+  <%= @event.penalty_fee %>
+</p>
+
+<p>
+  <strong>Cancellation policy:</strong>
+  <%= @event.cancellation_policy %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @event.public %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
