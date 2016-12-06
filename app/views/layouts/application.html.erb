@@ -18,13 +18,17 @@
 
     <%= render 'layouts/nav' %>
 
-    <%= yield %>
+    <div class="container">
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= yield %>
+
+    </div>
 
     <% if current_page?(root_path) %>
       <%= render 'layouts/footer' %>
     <% end %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </body>
 </html>
