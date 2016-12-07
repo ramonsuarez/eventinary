@@ -56,16 +56,6 @@
 </p>
 
 <p>
-  <strong>Start:</strong>
-  <%= @event.start %>
-</p>
-
-<p>
-  <strong>End:</strong>
-  <%= @event.end %>
-</p>
-
-<p>
   <strong>Image:</strong>
   <%= @event.image %>
 </p>
@@ -107,3 +97,90 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-8">
+
+    <!-- Preview Image -->
+      <img class="img-responsive" src="https://unsplash.it/900/300" alt="">
+</div>
+</div>
+</div>
+      <hr>
+
+
+        <h1><%= @event.title %></h1>
+      <h2>Name of Organization</h2>
+      <!-- Post Content -->
+      <p class="lead"><strong>Start:</strong>
+        <%= @event.start %>
+
+       <strong>End:</strong>
+        <%= @event.end %>
+      </p>
+<div class="col-md-4">
+        <div class="well">
+          <div class="row">
+<div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li><strong>Venue:</strong><%= @event.venue %><li>
+                <li><strong>Address:</strong><%= @event.address %></li>
+                <li><strong>Address 2:</strong><%= @event.address_2 %></li>
+                <li><strong>City:</strong><%= @event.city %></li>
+                <li><strong>State:</strong><%= @event.state %></li>
+                <li><strong>Postcode:</strong><%= @event.postcode %></li>
+                <li><strong>Country:</strong><%= @event.country %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog Categories Well -->
+<!--       <div class="well">
+        <h4>Blog Categories</h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+              <li><a href="#">Category Name</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Side Widget Well -->
+      <div class="well">
+        <h4>Side Widget Well</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+      </div>
+
+    </div>
+
+  </div>

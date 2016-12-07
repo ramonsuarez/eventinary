@@ -1,2 +1,2 @@
-json.extract! event, :id, :title, :online, :online_event, :venue, :address, :address_2, :city, :state, :postcode, :country, :show_map, :start, :end, :image, :description, :references, :ticket_name, :quantity, :penalty_fee, :cancellation_policy, :public, :price, :created_at, :updated_at
+json.extract! event, :id, :created_at, :updated_at
 json.url event_url(event, format: :json)
