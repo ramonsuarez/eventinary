@@ -1,19 +1,22 @@
-<%= form_for(event) do |f| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="container">
 
-      <ul>
+  <%= form_for(event) do |f| %>
+  <h2>Event Details</h2>
+  <% if event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
       <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label "Event Title" %>
+    <%= f.text_field :title, placeholder: 'Name of your event' %>
   </div>
 
   <div class="field">
@@ -27,52 +30,46 @@
   </div>
 
   <div class="field">
-    <%= f.label :venue %>
-    <%= f.text_field :venue %>
+
+    <%= f.text_field :venue, placeholder: "Venue Name" %>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, placeholder: "Address" %>
   </div>
 
   <div class="field">
-    <%= f.label :address_2 %>
-    <%= f.text_field :address_2 %>
+    <%= f.text_field :address_2, placeholder: "Address 2" %>
   </div>
 
   <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, placeholder: "City" %>
   </div>
 
   <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, placeholder: "State / Region" %>
   </div>
 
   <div class="field">
-    <%= f.label :postcode %>
-    <%= f.text_field :postcode %>
+    <%= f.text_field :postcode, placeholder: "Zip / Postcode" %>
   </div>
 
   <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
+    <%= f.text_field :country, placeholder: "Country" %>
   </div>
 
   <div class="field">
-    <%= f.label :show_map %>
     <%= f.check_box :show_map %>
+    <%= f.label "Show map on event page" %>
   </div>
 
   <div class="field">
-    <%= f.label :start %>
+    <%= f.label "Starts" %>
     <%= f.datetime_select :start %>
   </div>
 
   <div class="field">
-    <%= f.label :end %>
+    <%= f.label "Ends" %>
     <%= f.datetime_select :end %>
   </div>
 
@@ -119,4 +116,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>
