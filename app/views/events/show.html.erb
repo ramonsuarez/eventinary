@@ -35,47 +35,51 @@
       <% end %>
     </div>
   </div>
-<div class="row">
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Description:</h3>
+          <h5><%= @event.description %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3># Ticket name:</h3>
+          <h5><%= @event.ticket_name %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3># Quantity:</h3>
+          <h5><%= @event.quantity %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Penalty fee:</h3>
+          <h5><%= @event.penalty_fee %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Cancellation policy:</h3>
+          <h5><%= @event.cancellation_policy %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Price:</h3>
+          <h5><%= @event.price %></h5>
+      </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3>Description:</h3>
-        <h5><%= @event.description %></h5>
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_event_path(@event) %>
+        |
+      <% end %>
+      <%= link_to 'Back', events_path %>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3># Ticket name:</h3>
-        <h5><%= @event.ticket_name %></h5>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3># Quantity:</h3>
-        <h5><%= @event.quantity %></h5>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3>Penalty fee:</h3>
-        <h5><%= @event.penalty_fee %></h5>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3>Cancellation policy:</h3>
-        <h5><%= @event.cancellation_policy %></h5>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <h3>Price:</h3>
-        <h5><%= @event.price %></h5>
-    </div>
-</div>
-<% if user_signed_in? %>
-<%= link_to 'Edit', edit_event_path(@event) %>
-|
-<% end %>
-<%= link_to 'Back', events_path %>
+  </div>
 </div>
 <div class="container-fluid" >
   <div class="row">
