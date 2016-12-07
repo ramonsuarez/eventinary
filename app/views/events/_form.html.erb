@@ -1,120 +1,128 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-3">>>col-md-3<<</div>
 
-  <%= form_for(event) do |f| %>
-  <h2>Event Details</h2>
-  <% if event.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <div class="col-md-6">>>col-md-6<<
+      <div class="col-xs-12 col-sm-12 col-">
+        <%= form_for(event) do |f| %>
+        <h2>Event Details</h2>
+        <% if event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-    <ul>
-      <% event.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
+          <ul>
+            <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label "Event Title" %>
+          <%= f.text_field :title, placeholder: 'Name of your event' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :offline %>
+          <%= f.check_box :offline %>
+        </div>
+
+        <div class="field">
+          <%= f.label :online_url %>
+          <%= f.text_field :online_url %>
+        </div>
+
+        <div class="field">
+
+          <%= f.text_field :venue, placeholder: "Venue Name" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :address, placeholder: "Address" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :address_2, placeholder: "Address 2" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :city, placeholder: "City" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :state, placeholder: "State / Region" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :postcode, placeholder: "Zip / Postcode" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :country, placeholder: "Country" %>
+        </div>
+
+        <div class="field">
+          <%= f.check_box :show_map %>
+          <%= f.label "Show map on event page" %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Starts" %>
+          <%= f.datetime_select :start %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Ends" %>
+          <%= f.datetime_select :end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image %>
+          <%= f.text_field :image %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Event Description" %>
+          <%= f.text_area :description %>
+        </div>
+
+        <div class="field">
+          <%= f.label :ticket_name %>
+          <%= f.text_field :ticket_name %>
+        </div>
+
+        <div class="field">
+          <%= f.label :quantity %>
+          <%= f.number_field :quantity %>
+        </div>
+
+        <div class="field">
+          <%= f.label "No-Show Fee" %>
+          <%= f.number_field :penalty_fee %>
+        </div>
+
+
+        <div class="field">
+          <%= radio_button_tag(:cancellation_policy, "Moderate") %>
+          <%= label_tag(:cancellation_policy, "Moderate") %>
+          <%= radio_button_tag(:cancellation_policy, "Flexible") %>
+          <%= label_tag(:cancellation_policy, "Flexible") %>
+          <%= radio_button_tag(:cancellation_policy, "Strict") %>
+          <%= label_tag(:cancellation_policy, "Strict") %>
+        </div>
+
+        <div class="field">
+          <%= f.check_box :public %>
+          <%= f.label "This is a public event" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3">>>col-md-3<<</div>
   </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label "Event Title" %>
-    <%= f.text_field :title, placeholder: 'Name of your event' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :offline %>
-    <%= f.check_box :offline %>
-  </div>
-
-  <div class="field">
-    <%= f.label :online_url %>
-    <%= f.text_field :online_url %>
-  </div>
-
-  <div class="field">
-
-    <%= f.text_field :venue, placeholder: "Venue Name" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :address, placeholder: "Address" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :address_2, placeholder: "Address 2" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :city, placeholder: "City" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :state, placeholder: "State / Region" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :postcode, placeholder: "Zip / Postcode" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :country, placeholder: "Country" %>
-  </div>
-
-  <div class="field">
-    <%= f.check_box :show_map %>
-    <%= f.label "Show map on event page" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Starts" %>
-    <%= f.datetime_select :start %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Ends" %>
-    <%= f.datetime_select :end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ticket_name %>
-    <%= f.text_field :ticket_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :penalty_fee %>
-    <%= f.number_field :penalty_fee %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cancellation_policy %>
-    <%= f.text_field :cancellation_policy %>
-  </div>
-
-  <div class="field">
-    <%= f.label :public %>
-    <%= f.check_box :public %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
 </div>
