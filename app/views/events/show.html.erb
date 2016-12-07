@@ -1,207 +1,89 @@
 <p id="notice"><%= notice %></p>
+<div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @event.image %>');">
+
+    <div class="pull-right">Free</div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Title:</h1>
-      <h5><%= @event.title %></h5>
+      <h2><%= @event.title %></h2>
+      <h3>Name of Organization</h3>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+    <h3>Date & Time</h3>
+      <h5><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></h5>
+      <h5><%= @event.end.strftime("%m/%d/%Y at %I:%M%p") %></h5>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Offline:</h1>
-      <h5><%= @event.offline %></h5>
+      <h3>Location</h3>
+      <% if @event.offline == true %>
+        <h5><%= @event.venue %></h5>
+        <h5><%= @event.address %></h5>
+        <h5><%= @event.address_2 %></h5>
+        <h5><%= "#{@event.postcode} #{@event.city}" %></h5>
+        <h5><%= @event.state %></h5>
+        <h5><%= @event.country %></h5>
+        <h3>Show map:</h3>
+        <h5><a href="#map"></a></h5>
+      <% else %>
+        <h3>Online url:</h3>
+        <h5><%= @event.online_url %></h5>
+      <% end %>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Online url:</h1>
-      <h5><%= @event.online_url %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Venue:</h1>
-      <h5><%= @event.venue %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Address:</h1>
-      <h5><%= @event.address %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Address 2:</h1>
-      <h5><%= @event.address_2 %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>City:</h1>
-      <h5><%= @event.city %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>State:</h1>
-      <h5><%= @event.state %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Postcode:</h1>
-      <h5><%= @event.postcode %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Country:</h1>
-      <h5><%= @event.country %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Show map:</h1>
-      <h5><%= @event.show_map %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Image:</h1>
-      <h5><%= @event.image %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Description:</h1>
-      <h5><%= @event.description %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Ticket name:</h1>
-      <h5><%= @event.ticket_name %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Quantity:</h1>
-      <h5><%= @event.quantity %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Penalty fee:</h1>
-      <h5><%= @event.penalty_fee %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Cancellation policy:</h1>
-      <h5><%= @event.cancellation_policy %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Public:</h1>
-      <h5><%= @event.public %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Price:</h1>
-      <h5><%= @event.price %></h5>
-    </div>
-  </div>
-
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
-
-
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <!-- Blog Post Content Column -->
-      <div class="col-lg-8">
-
-      <!-- Preview Image -->
-        <img class="img-responsive" src="https://unsplash.it/900/300" alt="">
-  </div>
-  </div>
-  </div>
-        <hr>
-
-
-          <h1><%= @event.title %></h1>
-        <h2>Name of Organization</h2>
-        <!-- Post Content -->
-        <p class="lead"><strong>Start:</strong>
-          <%= @event.start %>
-
-         <strong>End:</strong>
-          <%= @event.end %>
-        </p>
-  <div class="col-md-4">
-          <div class="well">
-            <div class="row">
-  <div class="col-lg-6">
-              <ul class="list-unstyled">
-                <li><strong>Venue:</strong><%= @event.venue %><li>
-                  <li><strong>Address:</strong><%= @event.address %></li>
-                  <li><strong>Address 2:</strong><%= @event.address_2 %></li>
-                  <li><strong>City:</strong><%= @event.city %></li>
-                  <li><strong>State:</strong><%= @event.state %></li>
-                  <li><strong>Postcode:</strong><%= @event.postcode %></li>
-                  <li><strong>Country:</strong><%= @event.country %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-
-        <!-- Blog Categories Well -->
-  <!--       <div class="well">
-          <h4>Blog Categories</h4>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul class="list-unstyled">
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul class="list-unstyled">
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Side Widget Well -->
-        <div class="well">
-          <h4>Side Widget Well</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-        </div>
-
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Description:</h3>
+          <h5><%= @event.description %></h5>
       </div>
-
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3># Ticket name:</h3>
+          <h5><%= @event.ticket_name %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3># Quantity:</h3>
+          <h5><%= @event.quantity %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Penalty fee:</h3>
+          <h5><%= @event.penalty_fee %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Cancellation policy:</h3>
+          <h5><%= @event.cancellation_policy %></h5>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h3>Price:</h3>
+          <h5><%= @event.price %></h5>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_event_path(@event) %>
+        |
+      <% end %>
+      <%= link_to 'Back', events_path %>
     </div>
+  </div>
+</div>
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-xs-12" style="height: 300px; background-color: grey; margin: 25px 0">
+    </div>
+  </div>
 </div>
