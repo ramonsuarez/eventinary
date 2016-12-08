@@ -1,32 +1,32 @@
 <div class="container">
   <div class="row">
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
       <%= simple_form_for event do |f| %>
-        <h2>Event Details</h2>
-        <% if event.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h2>Event Details</h2>
+      <% if event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-            <ul>
-              <% event.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        <div class="field">
-          <%= f.input :title, placeholder: 'Name of your event', class: "form-control" %>
-        </div>
+        <ul>
+          <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="field">
+        <%= f.input :title, label: "Event Name", placeholder: 'Give your event a short and clear name', class: "form-control" %>
+      </div>
 
-
-
+      <div>
         <%= radio_button_tag(:offline, true) %>
-        <%= label_tag(:cancellation_policy, "Offline") %>
+        <%= label_tag(:cancellation_policy, "Enter address") %>
         <%= radio_button_tag(:offline, false) %>
-        <%= label_tag(:offline, "Online") %>
+        <%= label_tag(:offline, "Online event") %>
+
         <div class="online-fields">
           <div class="field">
-            <%= f.input :online_url, class: "form-control" %>
+            <%= f.input :online_url, placeholder: "Enter the event's website", label: false, class: "form-control" %>
           </div>
         </div>
 
@@ -63,48 +63,51 @@
           </div>
         </div>
 
-        <div class="field">
-          <%= f.input :start, as: :date %>
-        </div>
+      </div>
 
-        <div class="field">
-          <%= f.input :end, as: :date %>
-        </div>
+      <div class="field">
+        <%= f.input :start, as: :datetime, label: "Starts" %>
+      </div>
 
-        <div class="field">
-          <%= f.input :image, as: :attachinary %>
-        </div>
+      <div class="field">
+        <%= f.input :end, as: :datetime, label: "Ends" %>
+      </div>
 
-        <div class="field">
-          <%= f.input :description, class: "form-control" %>
-        </div>
+      <div class="field">
+        <%= f.input :image, as: :attachinary %>
+      </div>
 
-        <div class="field">
-          <%= f.input :ticket_name, class: "form-control" %>
-        </div>
+      <div class="field">
+        <%= f.input :description, class: "form-control" %>
+      </div>
 
-        <div class="field">
-          <%= f.input :quantity, type: :number %>
-        </div>
+      <div class="field">
+        <%= f.input :ticket_name, class: "form-control" %>
+      </div>
 
-        <div class="field">
-          <%= f.input :penalty_fee, type: :number %>
-        </div>
+      <div class="field">
+        <%= f.input :quantity, type: :number %>
+      </div>
+
+      <div class="field">
+        <%= f.input :penalty_fee, placeholder: "No show charge", type: :number %>
+      </div>
 
 
-        <div class="field">
+      <div class="field">
+      <span style="font-weight: 600">Cancellation Policy</span>
         <%= f.collection_radio_buttons :cancellation_policy, cancellation_policy_collection, :last, :first, item_wrapper_tag: :div do |b| %>
-            <%= b.radio_button(value: b.text) + b.label(class: "collection_radio_buttons", value: b.text) %>
+        <%= b.radio_button(value: b.text) + b.label(class: "collection_radio_buttons", value: b.text) %>
         <% end %>
-        </div>
+      </div>
 
-        <div class="field">
-          <%= f.input :public, label: "Is it a public event?" %>
-        </div>
+      <div class="field">
+        <%= f.input :public, label: "This is a public event" %>
+      </div>
 
-        <div class="actions">
-          <%= f.submit %>
-        </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
       <% end %>
 
     </div>
