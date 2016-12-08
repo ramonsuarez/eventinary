@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208155627) do
+ActiveRecord::Schema.define(version: 20161208162944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,17 +47,9 @@ ActiveRecord::Schema.define(version: 20161208155627) do
     t.string   "online_url"
     t.string   "venue"
     t.string   "address"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "postcode"
-    t.string   "country"
-    t.boolean  "show_map"
     t.datetime "start"
     t.datetime "end"
-    t.string   "image"
     t.text     "description"
-    t.string   "ticket_name"
     t.integer  "quantity"
     t.integer  "penalty_fee"
     t.string   "cancellation_policy"
@@ -65,6 +57,20 @@ ActiveRecord::Schema.define(version: 20161208155627) do
     t.integer  "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "status"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "logo"
+    t.string   "description"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_organizations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +92,5 @@ ActiveRecord::Schema.define(version: 20161208155627) do
 
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
+  add_foreign_key "organizations", "users"
 end
