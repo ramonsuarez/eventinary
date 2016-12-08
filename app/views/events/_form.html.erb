@@ -21,7 +21,7 @@
       <div>
       <span>Location </span>
         <%= radio_button_tag(:offline, true) %>
-        <%= label_tag(:cancellation_policy, "Enter address") %>
+        <%= label_tag(:offline, "Enter address") %>
         <%= radio_button_tag(:offline, false) %>
         <%= label_tag(:offline, "Online event") %>
 
@@ -40,28 +40,6 @@
             <%= f.input :address, placeholder: "Address", input_html: { class: "form-control js-search-autocomplete" } %>
           </div>
 
-          <!-- <div class="field">
-            <%= f.input :address_2, placeholder: "Address 2", class: "form-control" %>
-          </div>
-
-          <div class="field">
-            <%= f.input :city, placeholder: "City", class: "form-control" %>
-          </div>
-
-          <div class="field">
-            <%= f.input :state, placeholder: "State / Region", class: "form-control" %>
-          </div>
-
-          <div class="field">
-            <%= f.input :postcode, placeholder: "Zip / Postcode", class: "form-control" %>
-          </div>
-
-          <div class="field">
-            <%= f.input :country, collection: ["Belgium", "Brazil", "Syria", "Spain"] %>
-          </div> -->
-          <div class="field">
-            <%= f.input :show_map %>
-          </div>
         </div>
 
       </div>
