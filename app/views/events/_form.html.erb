@@ -1,122 +1,111 @@
-<%= form_for(event) do |f| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="container">
+  <div class="row">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+      <%= simple_form_for event do |f| %>
+        <h2>Event Details</h2>
+        <% if event.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.input :title, placeholder: 'Name of your event', class: "form-control" %>
+        </div>
+
+
+
+        <%= radio_button_tag(:offline, true) %>
+        <%= label_tag(:cancellation_policy, "Offline") %>
+        <%= radio_button_tag(:offline, false) %>
+        <%= label_tag(:offline, "Online") %>
+        <div class="online-fields">
+          <div class="field">
+            <%= f.input :online_url, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="offline-fields">
+          <div class="field">
+            <%= f.input :venue, placeholder: "Venue Name", class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.input :address, placeholder: "Address", input_html: { class: "form-control js-search-autocomplete" } %>
+          </div>
+
+          <div class="field">
+            <%= f.input :address_2, placeholder: "Address 2", class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.input :city, placeholder: "City", class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.input :state, placeholder: "State / Region", class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.input :postcode, placeholder: "Zip / Postcode", class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.input :country, collection: ["Belgium", "Brazil", "Syria", "Spain"] %>
+          </div>
+          <div class="field">
+            <%= f.input :show_map %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.input :start, as: :date %>
+        </div>
+
+        <div class="field">
+          <%= f.input :end, as: :date %>
+        </div>
+
+        <div class="field">
+          <%= f.input :image, as: :attachinary %>
+        </div>
+
+        <div class="field">
+          <%= f.input :description, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.input :ticket_name, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.input :quantity, type: :number %>
+        </div>
+
+        <div class="field">
+          <%= f.input :penalty_fee, type: :number %>
+        </div>
+
+
+        <div class="field">
+        <%= f.collection_radio_buttons :cancellation_policy, cancellation_policy_collection, :last, :first, item_wrapper_tag: :div do |b| %>
+            <%= b.radio_button(value: b.text) + b.label(class: "collection_radio_buttons", value: b.text) %>
+        <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.input :public, label: "Is it a public event?" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-      </ul>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= f.label :offline %>
-    <%= f.check_box :offline %>
-  </div>
-
-  <div class="field">
-    <%= f.label :online_url %>
-    <%= f.text_field :online_url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :venue %>
-    <%= f.text_field :venue %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address_2 %>
-    <%= f.text_field :address_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= f.label :postcode %>
-    <%= f.text_field :postcode %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :show_map %>
-    <%= f.check_box :show_map %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start %>
-    <%= f.datetime_select :start %>
-  </div>
-
-  <div class="field">
-    <%= f.label :end %>
-    <%= f.datetime_select :end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ticket_name %>
-    <%= f.text_field :ticket_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :penalty_fee %>
-    <%= f.number_field :penalty_fee %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cancellation_policy %>
-    <%= f.text_field :cancellation_policy %>
-  </div>
-
-  <div class="field">
-    <%= f.label :public %>
-    <%= f.check_box :public %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

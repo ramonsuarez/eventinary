@@ -25,7 +25,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -69,6 +68,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.fetch(:event, {})
+        params.require(:event).permit(:title, :offline, :online_url, :venue, :address, :address_2, :city, :state, :postcode, :country, :show_map, :start, :end, :image, :description, :organization_id, :ticket_name, :quantity, :penalty_fee, :cancellation_policy, :public, :price)
+
     end
 end
