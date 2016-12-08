@@ -1,81 +1,111 @@
 <p id="notice"><%= notice %></p>
+
 <div class="box">
-  <div class="banner-show " style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @event.image %>');">
+  <div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @event.image %>');">
     <div class="ribbon"><span>Free</span>
     </div>
   </div>
 </div>
+<div class="container show-page">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h3><%= @event.title %></h3>
+      <h4>Name of Organization</h4>
+    </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h2><%= @event.title %></h2>
-      <h3>Name of Organization</h3>
+  <% if user_signed_in? %>
+
+    <div class="col-xs-12 col-md-3">
+      <a href="#"><div class="sticky-to-bottom-button btn-treehouse text-center">RSVP</div></a>
     </div>
+
+  <% else %>
+
+    <div class="col-xs-12 col-md-3">
+      <div class="sticky-to-bottom-button btn-treehouse text-center disabled">RSVP</div>
+    </div>
+
+  <% end %>
+
   </div>
+  <hr/>
    <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-    <h3>Date & Time</h3>
-      <h5><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></h5>
-      <h5><%= @event.end.strftime("%m/%d/%Y at %I:%M%p") %></h5>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+    <h4>Date & Time</h4>
+      <h6><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+      <h6><%= @event.end.strftime("%m/%d/%Y at %I:%M%p") %></h6>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3>Location</h3>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4>Location</h4>
       <% if @event.offline == true %>
-        <h5><%= @event.venue %></h5>
-        <h5><%= @event.address %></h5>
-        <h5><%= @event.address_2 %></h5>
-        <h5><%= "#{@event.postcode} #{@event.city}" %></h5>
-        <h5><%= @event.state %></h5>
-        <h5><%= @event.country %></h5>
-        <h3>Show map:</h3>
-        <h5><a href="#map"></a></h5>
+        <h6><%= @event.venue %></h6>
+        <h6><%= @event.address %></h6>
+        <h6><%= @event.address_2 %></h6>
+        <h6><%= "#{@event.postcode} #{@event.city}" %></h6>
+        <h6><%= @event.state %></h6>
+        <h6><%= @event.country %></h6>
+        <h6 class="text-center"><a href="#map">Show map</a></h6>
       <% else %>
-        <h3>Online url:</h3>
-        <h5><%= @event.online_url %></h5>
+        <h4>Online url:</h4>
+        <h6><%= @event.online_url %></h6>
       <% end %>
     </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3>Description:</h3>
-          <h5><%= @event.description %></h5>
-      </div>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4>Description:</h4>
+      <h6><%= @event.description %></h6>
+    </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3># Ticket name:</h3>
-          <h5><%= @event.ticket_name %></h5>
-      </div>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-ticket" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4># Quantity:</h4>
+      <h6><%= @event.quantity %></h6>
+    </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3># Quantity:</h3>
-          <h5><%= @event.quantity %></h5>
-      </div>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-exclamation" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4>Penalty fee:</h4>
+      <h6><%= @event.penalty_fee %></h6>
+    </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3>Penalty fee:</h3>
-          <h5><%= @event.penalty_fee %></h5>
-      </div>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-exclamation" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4>Cancellation policy:</h4>
+      <h6><%= @event.cancellation_policy %></h6>
+    </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3>Cancellation policy:</h3>
-          <h5><%= @event.cancellation_policy %></h5>
-      </div>
+    <div class="col-xs-1 col-md-1 col-md-offset-2">
+      <i class="fa fa-euro" aria-hidden="true"></i>
+    </div>
+    <div class="col-xs-11 col-md-6">
+      <h4>Price:</h4>
+      <h6><%= @event.price %></h6>
+    </div>
   </div>
   <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <h3>Price:</h3>
-          <h5><%= @event.price %></h5>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
+    <div class="col-xs-4 col-xs-offset-8 col-md-6 col-md-offset-3">
       <% if user_signed_in? %>
         <%= link_to 'Edit', edit_event_path(@event) %>
         |
@@ -84,20 +114,10 @@
     </div>
   </div>
 </div>
-<div class="container-fluid" >
+<div class="container-fluid">
+  <a name="map"></a>
   <div class="row">
     <div class="col-xs-12" style="height: 300px; background-color: grey; margin: 25px 0">
     </div>
   </div>
 </div>
-
-<div class="container" style="position: fixed;bottom: 0px;" >
-  <div class="row">
-    <div class="col-xs-12" style=" background-color: #0dce00; margin: 25px 0">
-   <h1> RSVP </h1> </div>
-  </div>
-</div>
-
-
-
-

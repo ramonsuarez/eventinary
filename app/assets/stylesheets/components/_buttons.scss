@@ -1,0 +1,53 @@
+.btn-treehouse {
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  margin: 10px 0;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+}
+.sticky-to-bottom-button {
+  color: white;
+  font-size: 20pt;
+  font-weight: bold;
+  padding: 15px 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  background: #8BC34A;
+  position: relative;
+  width: 100%;
+  z-index: 20;
+
+  &:link, &:visited {
+    color: #C5E1A5;
+    background: #8BC34A;
+  }
+  &:hover, &:active {
+    color: white;
+    background: #AED581;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+  .btn-treehouse {
+    border-radius: 0px;
+    margin: 0;
+  }
+  .sticky-to-bottom-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
+  .btn-treehouse {
+    border-radius: 0px;
+    margin: 0;
+  }
+  .sticky-to-bottom-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
