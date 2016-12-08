@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+
 # require "rails/test_unit/railtie"
 require "attachinary/orm/active_record"
 
@@ -19,9 +20,9 @@ Bundler.require(*Rails.groups)
 
 module TestLeWagonTemplate
   class Application < Rails::Application
-    config.generators do |generate|
-      generate.assets false
-    end
+    # config.generators do |generate|
+    #   generate.assets false
+    # end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

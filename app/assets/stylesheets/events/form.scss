@@ -1,0 +1,25 @@
+#offline_false:checked + label + .online-fields {
+  display: block ;
+}
+
+#offline_true:checked + label + input + label + .online-fields + .offline-fields {
+  display: block ;
+}
+
+.online-fields {
+  display: none;
+}
+
+.offline-fields {
+  display: none;
+}
+
+#event_offline_true > .offline-fields {
+  color: red;
+}
+
+
+// .input_lg {
+//   border-radius: 2px;
+//   border-color: #eee;
+// }
