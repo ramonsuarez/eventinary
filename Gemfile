@@ -20,7 +20,6 @@ gem 'cloudinary'
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
-gem 'faker'
 
 group :development, :test do
   gem 'binding_of_caller'
