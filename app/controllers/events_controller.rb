@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [ :show ]
   # GET /events
   # GET /events.json
   def index
@@ -19,6 +19,10 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+  end
+
+  def cancel
+
   end
 
   # POST /events
