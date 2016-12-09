@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :first_name, :city, :last_name, :want_host, :want_newsletter, :phone, :job, :about_me) }
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :first_name, :city, :last_name, :want_host, :want_newsletter, :phone, :job, :about_me) }
   end
 end
