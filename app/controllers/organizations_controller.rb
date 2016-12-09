@@ -21,6 +21,10 @@ class OrganizationsController < ApplicationController
     @organization.update(organization_params)
   end
 
+  def events
+
+  end
+
   private
     def set_organization
       @organization = Organization.find(params[:id])
