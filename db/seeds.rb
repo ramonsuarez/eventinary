@@ -66,6 +66,13 @@ cancellation_policy: "Flexible",
 public: true,
 price: 0
 )
+Organization.create!(
+  name: "Title",
+  url: "www.google.com/",
+  description: "Some description",
+  email: "some@email.com",
+  phone: "0484848484"
+)
 # TODO update user with new info when we build on devise's default
 User.create(
   email:"test@test.com",
