@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'organizers/new'
+
+  get 'organizers/create'
+
+  get 'organizers/show'
+
+  get 'organizers/edit'
+
+  get 'organizers/update'
+
   resources :events
   devise_for :users
   root to: 'pages#home'
