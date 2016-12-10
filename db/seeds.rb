@@ -103,9 +103,6 @@ p "Organization id #{o3.id}"
 # EVENTS
 ###########
 
-Event.destroy_all
-User.destroy_all
-
  e1 = Event.create(
    title: "Startup Weekend Brussels FinTech" ,
    offline: true,
@@ -178,37 +175,37 @@ p "Event id #{e3.id}"
 # BOOKINGS
 ###########
 
-# b1 = Booking.create(
-#   attended: false,
-#   cancelled: false,
-#   user_id: u1.id,
-#   event_id: e1.id
-#   )
+b1 = Booking.create(
+  attended: false,
+  cancelled: false,
+  user_id: u1.id,
+  event_id: e1.id
+  )
 
-# b1.save
+b1.save
 
-# p "Booking id #{b1.id}"
-
-
-# b2 = Booking.create(
-#   attended: false,
-#   cancelled: false,
-#   user_id: u2.id,
-#   event_id: e2.id
-#   )
-
-# b2.save
-
-# p "Booking id #{b2.id}"
+p "Booking id #{b1.id}"
 
 
-# b3 = Booking.create(
-#   attended: false,
-#   cancelled: true,
-#   user_id: u3.id,
-#   event_id: e3.id
-#   )
+b2 = Booking.create(
+  attended: false,
+  cancelled: false,
+  user_id: u2.id,
+  event_id: e2.id
+  )
 
-# b3.save
+b2.save
 
-# p "Booking id #{b3.id}"
+p "Booking id #{b2.id}"
+
+
+b3 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u3.id,
+  event_id: e3.id
+  )
+
+b3.save
+
+p "Booking id #{b3.id}"
