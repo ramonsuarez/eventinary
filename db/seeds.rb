@@ -15,7 +15,7 @@ u = User.create(
 u.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAARLAAAAJGEwOWFmMWIyLTQzNDMtNGMwNy1hYzQyLTQ2ZGVlMWVjNDFiNQ.jpg", "r")
 u.save
 
-p "User id " + u.id
+p "User id #{u.id}"
 
 u = User.create(
   first_name: "Sara",
@@ -28,7 +28,7 @@ u = User.create(
 u.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAAgpAAAAJDI2ZjY1M2I5LTVmNmMtNDM0ZS05MjI5LTA2OWVhZjI1Y2ZiOA.jpg", "r")
 u.save
 
-p "User id " + u.id
+p "User id #{u.id}"
 
 u = User.create(
   first_name: "Gabriela",
@@ -41,7 +41,7 @@ u = User.create(
 u.avatar =  open("https://startups.be/storage/app/uploads/public/57d/810/088/thumb_3837_500x500_0_0_crop.jpg", "r")
 u.save
 
-p "User id " + u.id
+p "User id #{u.id}"
 
 u = User.create(
   first_name: "testing",
@@ -51,53 +51,53 @@ u = User.create(
   email:"test@test.com",
   password: "secret"
   )
-u.avatar =  open("", "r")
+u.avatar =  open("http://irishdeaths.com/wp-content/uploads/2014/03/Jane-Doe-3-800x450.jpg", "r")
 u.save
 
-p "User id " + u.id
+p "User id #{u.id}"
 
 ###########
 # ORGANIZATIONS
 ###########
 
 o = Organization.create!(
-  name: "Title",
-  url: "www.google.com/",
-  description: "Some description",
-  email: "some@email.com",
-  phone: "0484848484"
+  name: "Startup Weekend Brussels",
+  url: "brussels.startupweekend.org",
+  description: "Where Brussels comes to build skills, meet incredible people, and launch successful startups",
+  email: "swbru@gmail.com",
+  phone: "32484848484"
 )
 
-o.logo =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+o.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
 o.save
 
-p "Organization id " + o.id
+p "Organization id #{o.id}"
 
 o = Organization.create!(
-  name: "Title",
-  url: "www.google.com/",
-  description: "Some description",
-  email: "some@email.com",
-  phone: "0484848484"
+  name: "Betacowork Coworking Brussels",
+  url: "http://www.betacowork.com",
+  description: "Shared office coworking space in Brussels, for professionals and entrepreneurs. Much more than a business center. Startup & geek friendly professional network.",
+  email: "support@betacowork.com",
+  phone: "02 737 67 69"
 )
 
-o.logo =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+o.logo =  open("http://railsgirls.com/images/brussels/betacowork-coworking.png", "r")
 o.save
 
-p "Organization id " + o.id
+p "Organization id #{o.id}"
 
 o = Organization.create!(
-  name: "Title",
-  url: "www.google.com/",
-  description: "Some description",
-  email: "some@email.com",
-  phone: "0484848484"
+  name: "Startups.be",
+  url: "startups.be",
+  description: "We’re the one stop shop for Belgian tech entrepreneurs....Connecting the dots. Representing the startup community. Unlocking expertise & talent",
+  email: "events@startups.be",
+  phone: ""
 )
 
-o.logo =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+o.logo =  open("http://www.bene.be/images/uploads/blog/cache/work-logo-500-01-500x353.png", "r")
 o.save
 
-p "Organization id " + o.id
+p "Organization id #{o.id}"
 
 ###########
 # EVENTS
@@ -109,7 +109,7 @@ User.destroy_all
  e = Event.create(
    title: "Startup Weekend Brussels FinTech" ,
    offline: true,
-   online_url: ""
+   online_url: "",
    venue: "co.station",
    address: "Place Sainte-Gudule 5",
    start: "Fri, 9 Oct 2016 18:00:00 UTC +00:00",
@@ -125,7 +125,7 @@ User.destroy_all
 e.image =  open("http://www.westartup.eu/wp-content/uploads/2015/08/SW-FinTech-Cover-foto.jpg", "r")
 e.save
 
-p "Event id " + e.id
+p "Event id #{e.id}"
 
 e = Event.create(
    title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
@@ -145,7 +145,7 @@ e = Event.create(
 e.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
 e.save
 
-p "Event id " + e.id
+p "Event id #{e.id}"
 
 e = Event.create(
 title: "MIC Brussels : Boostcamp Kick-off Day" ,
@@ -165,7 +165,7 @@ price: 0
 e.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
 e.save
 
-p "Event id " + e.id
+p "Event id #{e.id}"
 
 ###########
 # BOOKINGS
@@ -181,7 +181,7 @@ b = Booking.create(
 b.image = open("", "r")
 b.save
 
-p "Booking id" + b.id
+p "Booking id #{b.id}"
 
 
 b = Booking.create(
@@ -194,7 +194,7 @@ b = Booking.create(
 b.image = open("", "r")
 b.save
 
-p "Booking id" + b.id
+p "Booking id #{b.id}"
 
 
 b = Booking.create(
@@ -207,4 +207,4 @@ b = Booking.create(
 b.image = open("", "r")
 b.save
 
-p "Booking id" + b.id
+p "Booking id #{b.id}"
