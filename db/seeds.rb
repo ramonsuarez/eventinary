@@ -4,7 +4,7 @@
 # USERS
 ###########
 
-u = User.create(
+u1 = User.create(
   first_name: "Michel",
   last_name: "Duchateau",
   address: "Rue de peres blancs 4, 1040, Etterbeek, Brussels, Belgium",
@@ -12,12 +12,12 @@ u = User.create(
   email:"michel@duchateau.be",
   password: "michelduchateau"
   )
-u.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAARLAAAAJGEwOWFmMWIyLTQzNDMtNGMwNy1hYzQyLTQ2ZGVlMWVjNDFiNQ.jpg", "r")
-u.save
+u1.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAARLAAAAJGEwOWFmMWIyLTQzNDMtNGMwNy1hYzQyLTQ2ZGVlMWVjNDFiNQ.jpg", "r")
+u1.save
 
-p "User id #{u.id}"
+p "User id #{u1.id}"
 
-u = User.create(
+u2 = User.create(
   first_name: "Sara",
   last_name: "Magnabosco",
   address: "rue de pères blancs 4, 1040, brussels",
@@ -25,12 +25,12 @@ u = User.create(
   email:"sara@betacowork.com",
   password: "saramagnabosco"
   )
-u.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAAgpAAAAJDI2ZjY1M2I5LTVmNmMtNDM0ZS05MjI5LTA2OWVhZjI1Y2ZiOA.jpg", "r")
-u.save
+u2.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAAgpAAAAJDI2ZjY1M2I5LTVmNmMtNDM0ZS05MjI5LTA2OWVhZjI1Y2ZiOA.jpg", "r")
+u2.save
 
-p "User id #{u.id}"
+p "User id #{u2.id}"
 
-u = User.create(
+u3 = User.create(
   first_name: "Gabriela",
   last_name: "Fernandez",
   address: "Rue de peres blancs 4, brussels",
@@ -38,12 +38,12 @@ u = User.create(
   email:"gabriela@startups.be",
   password: "gabrielafernandez"
   )
-u.avatar =  open("https://startups.be/storage/app/uploads/public/57d/810/088/thumb_3837_500x500_0_0_crop.jpg", "r")
-u.save
+u3.avatar =  open("https://startups.be/storage/app/uploads/public/57d/810/088/thumb_3837_500x500_0_0_crop.jpg", "r")
+u3.save
 
-p "User id #{u.id}"
+p "User id #{u3.id}"
 
-u = User.create(
+u4 = User.create(
   first_name: "testing",
   last_name: "last_name",
   address: "Test street 14, Test Town, United Tests of the world",
@@ -51,16 +51,16 @@ u = User.create(
   email:"test@test.com",
   password: "secret"
   )
-u.avatar =  open("http://irishdeaths.com/wp-content/uploads/2014/03/Jane-Doe-3-800x450.jpg", "r")
-u.save
+u4.avatar =  open("http://irishdeaths.com/wp-content/uploads/2014/03/Jane-Doe-3-800x450.jpg", "r")
+u4.save
 
-p "User id #{u.id}"
+p "User id #{u4.id}"
 
 ###########
 # ORGANIZATIONS
 ###########
 
-o = Organization.create!(
+o1 = Organization.create!(
   name: "Startup Weekend Brussels",
   url: "brussels.startupweekend.org",
   description: "Where Brussels comes to build skills, meet incredible people, and launch successful startups",
@@ -68,12 +68,12 @@ o = Organization.create!(
   phone: "32484848484"
 )
 
-o.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
-o.save
+o1.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
+o1.save
 
-p "Organization id #{o.id}"
+p "Organization id #{o1.id}"
 
-o = Organization.create!(
+o2 = Organization.create!(
   name: "Betacowork Coworking Brussels",
   url: "http://www.betacowork.com",
   description: "Shared office coworking space in Brussels, for professionals and entrepreneurs. Much more than a business center. Startup & geek friendly professional network.",
@@ -81,12 +81,12 @@ o = Organization.create!(
   phone: "02 737 67 69"
 )
 
-o.logo =  open("http://railsgirls.com/images/brussels/betacowork-coworking.png", "r")
-o.save
+o2.logo =  open("http://railsgirls.com/images/brussels/betacowork-coworking.png", "r")
+o2.save
 
-p "Organization id #{o.id}"
+p "Organization id #{o2.id}"
 
-o = Organization.create!(
+o3 = Organization.create!(
   name: "Startups.be",
   url: "startups.be",
   description: "We’re the one stop shop for Belgian tech entrepreneurs....Connecting the dots. Representing the startup community. Unlocking expertise & talent",
@@ -94,10 +94,10 @@ o = Organization.create!(
   phone: ""
 )
 
-o.logo =  open("http://www.bene.be/images/uploads/blog/cache/work-logo-500-01-500x353.png", "r")
-o.save
+o3.logo =  open("http://www.bene.be/images/uploads/blog/cache/work-logo-500-01-500x353.png", "r")
+o3.save
 
-p "Organization id #{o.id}"
+p "Organization id #{o3.id}"
 
 ###########
 # EVENTS
@@ -106,7 +106,7 @@ p "Organization id #{o.id}"
 Event.destroy_all
 User.destroy_all
 
- e = Event.create(
+ e1 = Event.create(
    title: "Startup Weekend Brussels FinTech" ,
    offline: true,
    online_url: "",
@@ -122,12 +122,12 @@ User.destroy_all
    price: 0
  )
 
-e.image =  open("http://www.westartup.eu/wp-content/uploads/2015/08/SW-FinTech-Cover-foto.jpg", "r")
-e.save
+e1.image =  open("http://www.westartup.eu/wp-content/uploads/2015/08/SW-FinTech-Cover-foto.jpg", "r")
+e1.save
 
-p "Event id #{e.id}"
+p "Event id #{e1.id}"
 
-e = Event.create(
+e2 = Event.create(
    title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
    offline: true,
    venue: "Betacowork Coworking Brussels",
@@ -142,69 +142,73 @@ e = Event.create(
    price: 0
  )
 
-e.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
-e.save
+e2.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e2.save
 
-p "Event id #{e.id}"
+p "Event id #{e2.id}"
 
-e = Event.create(
-title: "MIC Brussels : Boostcamp Kick-off Day" ,
+e3 = Event.create(
+title: "Tech Startup Day" ,
 offline: true,
-venue: "MIC Brussels",
-address: "Rue Montoyer 51",
-start: "Thu, 19 Jan 2017 09:00:00 UTC +00:00",
-end: "Thu, 19 Jan 2017 17:00:00 UTC +00:00",
-description: "Join us for the FREE Kick Off of the Boostcamp #11, on the 19th of January. The objective of the Kick-Off is to provide you with a condensed version of the Boostcamp, in order to help you define if our program is suitable for your IT project. This full-day workshop will be led by Ben Piquard, head coach of the Boostcamp program. Validation of your registration will only be confirmed once you have completed a short questionnaire on your IT project. WHAT IS THE BOOSTCAMP? This program consists of a series of hands-on, practical workshops in key areas of knowledge for starting entrepreneurs (Business Model, Sales, Marketing, Finance, practical aspects). It will include sparring sessions with experts from a wide variety of backgrounds. Eight startups will have the chance to continue the program after the semifinal and be one step closer to the final. See agenda here. WHY SHOULD YOU JOIN BOOSTCAMP? Entrepreneurship is a profession in its own right, and to be successful you need to gain a lot of fundamental experience that you are most likely not even aware of in todays world. Boostcamp provides you with a crash course in these fundamentals of entrepreneurship. This intensive program will guide you with a step-by-step journey and help you make quick progress on your project – if your project hasn’t progressed in a while, we’ll definitely help you move forward. Most importantly, we focus on practice, not on theory – so you will really be able to gain a hands on experience with all of our practices. You also will have fantastic opportunities to discuss your project with experts, experienced entrepreneurs and potential investors; and get personalized, in-depth feedback from them. WHO CAN JOIN BOOSTCAMP? Any technology startup in the Brussels region (or intending to establish a business in the Brussels region) can qualify for Boostcamp. The program is designed for entrepreneurs who have built a prototype of their product, or are still thinking how to start their business. We also help young companies that have just been launched, but are still struggling to find a working business model and build their first revenues.",
-quantity: 100,
-penalty_fee: 0,
-cancellation_policy: "Flexible",
+venue: "The egg",
+address: "Rue Bara, Brussels",
+start: "Thu, 9 Mar 2017 09:00:00 UTC +00:00",
+end: "Thu, 9 Mar 2017 20:00:00 UTC +00:00",
+description: "Expect a massive gathering of the key players in the Belgian startup ecosystem and meet with the exact right people.
+
+On March 9th 2017, over 1.000 attendees will join the most complete and inspiring conference of the year.
+Hands-on inspiration & value adding networking for anyone involved
+in tech entrepreneurship !
+
+
+With the entire startup scene present, Tech Startup Day is the Belgian must attend event for all tech entrepreneurs & corporate innovators, providing you with inspiration, hands-on examples and testimonials and lots of relevant contacts allowing you to take your entrepreneurial project to the next level.",
+quantity: 800,
+penalty_fee: 250,
+cancellation_policy: "Moderate",
 public: true,
 price: 0
 )
 
-e.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
-e.save
+e3.image =  open("http://www.theeggbrussels.com/wp-content/uploads/2016/03/Tech-Startup-Days-3.jpg", "r")
+e3.save
 
-p "Event id #{e.id}"
+p "Event id #{e3.id}"
 
 ###########
 # BOOKINGS
 ###########
 
-b = Booking.create(
-  attended: false,
-  cancelled: false,
-  user_id: 1,
-  event_id: 1
-  )
+# b1 = Booking.create(
+#   attended: false,
+#   cancelled: false,
+#   user_id: u1.id,
+#   event_id: e1.id
+#   )
 
-b.image = open("", "r")
-b.save
+# b1.save
 
-p "Booking id #{b.id}"
-
-
-b = Booking.create(
-  attended: false,
-  cancelled: false,
-  user_id: 2,
-  event_id: 2
-  )
-
-b.image = open("", "r")
-b.save
-
-p "Booking id #{b.id}"
+# p "Booking id #{b1.id}"
 
 
-b = Booking.create(
-  attended: false,
-  cancelled: true,
-  user_id: 3,
-  event_id: 3
-  )
+# b2 = Booking.create(
+#   attended: false,
+#   cancelled: false,
+#   user_id: u2.id,
+#   event_id: e2.id
+#   )
 
-b.image = open("", "r")
-b.save
+# b2.save
 
-p "Booking id #{b.id}"
+# p "Booking id #{b2.id}"
+
+
+# b3 = Booking.create(
+#   attended: false,
+#   cancelled: true,
+#   user_id: u3.id,
+#   event_id: e3.id
+#   )
+
+# b3.save
+
+# p "Booking id #{b3.id}"
