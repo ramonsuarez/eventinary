@@ -81,7 +81,7 @@
       </div>
       <div class="col-xs-11 col-md-6">
         <h4>Penalty fee:</h4>
-        <h6><%= @event.penalty_fee %></h6>
+        <h6><%= humanized_money_with_symbol(@event.penalty_fee) %></h6>
       </div>
     </div>
     <div class="row">
