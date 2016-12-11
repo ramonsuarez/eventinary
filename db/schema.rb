@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208170718) do
+ActiveRecord::Schema.define(version: 20161211105417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 20161208170718) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
+  create_table "bootsy_image_galleries", force: :cascade do |t|
+    t.string   "bootsy_resource_type"
+    t.integer  "bootsy_resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bootsy_images", force: :cascade do |t|
+    t.string   "image_file"
+    t.integer  "image_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.boolean  "offline"
@@ -55,9 +69,11 @@ ActiveRecord::Schema.define(version: 20161208170718) do
     t.string   "cancellation_policy"
     t.boolean  "public"
     t.integer  "price"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "status"
+    t.integer  "penalty_fee_cents",    default: 0,     null: false
+    t.string   "penalty_fee_currency", default: "EUR", null: false
   end
 
   create_table "organizations", force: :cascade do |t|
