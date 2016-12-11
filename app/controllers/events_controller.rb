@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @events = Event.order("created_at desc").limit(4)
+    @events = Event.order("created_at desc").limit(6)
   end
 
   # GET /events/new

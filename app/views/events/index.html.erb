@@ -12,7 +12,7 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr> <!-- We need some css work here! -->
+      <tr>
       <td><%= event.title %></td>
       <td><%= cl_image_tag(event.image.path, { size: '125x125', crop: :fit }) %></td>
         <td><%= link_to 'Show', event_path(event)%></td>
