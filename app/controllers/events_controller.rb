@@ -4,12 +4,13 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order('created_at DESC')
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = Event.order("created_at desc").limit(4)
   end
 
   # GET /events/new

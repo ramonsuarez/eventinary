@@ -12,9 +12,11 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr>
+      <tr> <!-- We need some css work here! -->
       <td><%= event.title %></td>
-        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to event_path(event) do %></td>
+        <td><%= cl_image_tag(event.image.path, { size: '125x125', crop: :fit }) %></td>
+        <% end %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
