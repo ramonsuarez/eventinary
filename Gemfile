@@ -22,6 +22,8 @@ gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem "pg_search"
 gem 'money-rails'
+gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'binding_of_caller'
