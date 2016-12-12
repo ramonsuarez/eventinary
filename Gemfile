@@ -20,8 +20,11 @@ gem 'cloudinary'
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+gem 'stripe'
 gem "pg_search"
 gem 'money-rails'
+gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'binding_of_caller'
