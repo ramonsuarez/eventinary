@@ -22,6 +22,7 @@ gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'stripe'
 gem "pg_search"
+gem 'bootsy'
 gem 'money-rails'
 gem 'omniauth-facebook'
 

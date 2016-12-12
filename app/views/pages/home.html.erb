@@ -1,18 +1,23 @@
-<%= render "banner" %>
-
 <div class="container">
-  <div class="row">
-      <% @public_events.each do |event| %>
+<h1>Attend an event</h1>
+  <ul>
+    <li>
+      <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url('http://res.cloudinary.com/serendipity/image/upload/<%= event.image.path %>');">
-            <div class="card-description">
-              <h2><%= event.title %></h2>
-              <p><%= event.address %></p>
-            </div>
-
-            <%= link_to "More", event_path(event), class: "card-link" %>
-          </div>
+          <% if params[:search] %>
+            <% @public_events.each do |pe| %>
+             <% if pe.searchable.public %>
+              <%= render "pages/event", event: pe %>
+            <% end %>
+            <% end %>
+          <% else %>
+            <%= render "banner" %>
+            <% @public_events.each do |pe| %>
+            <%= render "events/event", event: pe %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
+      </div>
+    </li>
+   </ul>
   </div>
-</div>
