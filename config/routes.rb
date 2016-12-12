@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :pages, only: [:home]
   resources :organizations
   resources :events do
-    resources :bookings
+    resources :bookings, only: [:show, :create] do
+      resources :payments, only: [:new, :create]
+    end
   end
 end
 
