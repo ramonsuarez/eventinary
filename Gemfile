@@ -20,6 +20,7 @@ gem 'cloudinary'
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+gem 'stripe'
 gem "pg_search"
 gem 'money-rails'
 
