@@ -21,6 +21,8 @@ gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'stripe'
+gem "pg_search"
+gem 'money-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
