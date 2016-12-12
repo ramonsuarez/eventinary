@@ -25,6 +25,8 @@ gem "pg_search"
 gem 'bootsy'
 gem 'money-rails'
 gem 'omniauth-facebook'
+gem 'social-share-button', '0.8.5'
+
 
 
 group :development, :test do

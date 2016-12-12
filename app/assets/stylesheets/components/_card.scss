@@ -4,6 +4,11 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  transition: all 200ms ease-in-out;
+  border-radius: $border-radius-base;
+}
+.card:hover{
+  transform: scale(1.05);
 }
 .card-user {
   position: absolute;
@@ -37,7 +42,4 @@
   z-index:2;
   background: black;
   opacity: 0;
-}
-.card-link:hover{
-  opacity: 0.1;
 }
