@@ -4,8 +4,16 @@
     <li>
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <% @public_events.each do |pe| %>
-          <%= render "events/event", event: pe %>
+          <% if params[:search] %>
+            <% @public_events.each do |pe| %>
+             <% if pe.searchable.public %>
+              <%= render "pages/event", event: pe %>
+            <% end %>
+            <% end %>
+          <% else %>
+            <% @public_events.each do |pe| %>
+            <%= render "events/event", event: pe %>
+            <% end %>
           <% end %>
         </div>
       </div>
