@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, only: [:show, :update, :edit]
   root to: 'pages#home'

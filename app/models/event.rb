@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   has_attachment :image
   include PgSearch
   multisearchable against: [:title, :description]
+  include Bootsy::Container
 end
