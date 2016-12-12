@@ -15,3 +15,17 @@
 @import "pages/index";
 @import "events/*";
 @import "vendor/index";
+
+.authentication-container {
+background-color: #ffffff;
+padding: 30px;
+padding-top: 10 0 10 0;
+margin-top: 60px;
+border-radius: 4px;
+border: 1px solid #d2d6df;
+}
+
+.wrapper-sign-up-notification {
+  background-color: #F7F7F7;
+  margin-top: 1px;
+}
