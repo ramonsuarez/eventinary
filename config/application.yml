@@ -11,5 +11,14 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 CLOUDINARY_URL: "cloudinary://269666261817264:XxL0jVnDRx4pFeNz9qwV7AlOUmk@serendipity"
 development:
+
+  FB_ID: "1430715123607580"
+  FB_SECRET: "34dfe3bf38262882f3183d8c0d5f55ae"
+
+production:
+  FB_ID: "1430713150274444"
+  FB_SECRET: "4c5e09d01b8702f067163b316bb1b1b9"
+
   STRIPE_PUBLISHABLE_KEY: "sk_test_sLWPL6g2oggwv1WVGXSnmzdu"
   STRIPE_SECRET_KEY: "pk_test_Ky9cibFg1knD47YxIyIW8sYa"
+
