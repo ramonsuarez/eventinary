@@ -18,13 +18,13 @@
     <% if user_signed_in? %>
 
       <div class="col-xs-12 col-md-3">
-        <a href="#"><div class="sticky-to-bottom-button btn-treehouse text-center">RSVP</div></a>
+        <div class="text-center"><%= render "bookings/create" %></div>
       </div>
 
     <% else %>
 
       <div class="col-xs-12 col-md-3">
-        <div class="sticky-to-bottom-button btn-treehouse text-center disabled">RSVP</div>
+        <div class="text-center disabled"><%= render "bookings/create" %></div>
       </div>
 
     <% end %>
