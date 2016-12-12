@@ -11,8 +11,6 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
-    @organization.save
-    redirect_to organization_path, notice: "Organization was successfully created."
   end
 
   def edit
@@ -33,6 +31,6 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-      params.require(:organization).permit(:name, :url, :logo, :description, :email, :phone)
+    params.require(:organization).permit(:name, :url, :logo, :description, :email, :phone)
   end
 end
