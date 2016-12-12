@@ -6,7 +6,6 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <!-- Event search form -->
     <form action="/" method="get" class="navbar-wagon-search">
       <input type="text" name="search" class="navbar-wagon-search-input" placeholder="Find an event">
@@ -15,12 +14,6 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-<!--
-    <%= form_tag(events_path, method: 'get', class: 'navbar-form navbar-right') do %>
-    <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Find an Evet' %>
-    <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
-    <% end %> -->
-
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -60,13 +53,17 @@
 
     <% else %>
 
-    <!-- Login text link -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
 
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Create Event"), "events#new", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Create Event"), new_event_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -81,4 +78,3 @@
     </div>
   </div>
 </div>
-
