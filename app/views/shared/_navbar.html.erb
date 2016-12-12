@@ -7,7 +7,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<<<<<<< HEAD
     <!-- Event search form -->
     <form action="/" method="get" class="navbar-wagon-search">
       <input type="text" name="search" class="navbar-wagon-search-input" placeholder="Find an event">
@@ -16,13 +15,12 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-=======
-    <!-- Search form -->
+<!--
     <%= form_tag(events_path, method: 'get', class: 'navbar-form navbar-right') do %>
     <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Find an Evet' %>
     <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
-    <% end %>
->>>>>>> b8f52d0e186c213f1b58d38d5acfbd4948b412cc
+    <% end %> -->
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
