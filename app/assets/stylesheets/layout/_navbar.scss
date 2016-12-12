@@ -36,11 +36,7 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  width: auto !important;
-  min-width: 10px !important;
-  max-width: 100% !important;
   padding: 0 20px ;
-  text-transform: uppercase;
 }
 
 /* Navbar standard link */
@@ -132,4 +128,12 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-wagon-login-link {
+  min-width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #616668;
+  font-size: 14px;
 }
