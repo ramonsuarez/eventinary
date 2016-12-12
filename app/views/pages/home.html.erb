@@ -1,23 +1,22 @@
-<div class="container">
 <% unless params[:search] %>
-  <%= render "banner" %>
-<% end %>
-      <div class="row">
-          <% if params[:search] %>
-            <% @public_events.each do |pe| %>
-             <% if pe.searchable.public %>
-        <div class="col-xs-12 col-sm-4">
-              <%= render "pages/event", event: pe %>
-            <% end %>
-            <% end %>
-         </div>
+<%= render "banner" %>
+<div class="container">
+  <% end %>
+  <div class="row">
+    <% if params[:search] %>
+    <% @public_events.each do |pe| %>
+    <% if pe.searchable.public %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render "pages/event", event: pe %>
+      <% end %>
+      <% end %>
+    </div>
 
-          <% else %>
-            <% @public_events.each do |pe| %>
-        <div class="col-xs-12 col-sm-4">
-            <%= render "events/event", event: pe %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
+    <% else %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render "events/event" %>
+
+      <% end %>
+    </div>
   </div>
+</div>
