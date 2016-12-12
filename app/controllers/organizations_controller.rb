@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-    before_action :set_organization, only: [:show, :create, :edit, :update]
+    before_action :set_organization, only: [:show,  :edit, :update]
 
   def show
     @organizations = Organization.all
@@ -11,6 +11,8 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
+    @organization.save!
+    redirect_to organization_path(@organization)
   end
 
   def edit
