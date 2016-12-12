@@ -41,20 +41,6 @@ ActiveRecord::Schema.define(version: 20161211162919) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
-  create_table "bootsy_image_galleries", force: :cascade do |t|
-    t.string   "bootsy_resource_type"
-    t.integer  "bootsy_resource_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bootsy_images", force: :cascade do |t|
-    t.string   "image_file"
-    t.integer  "image_gallery_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.boolean  "offline"
