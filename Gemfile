@@ -21,6 +21,7 @@ gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem "pg_search"
+gem 'bootsy'
 gem 'money-rails'
 
 group :development, :test do
