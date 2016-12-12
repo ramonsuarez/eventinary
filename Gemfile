@@ -22,6 +22,7 @@ gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem "pg_search"
 gem 'bootsy'
+gem 'money-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
