@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
-  has_attachment :image
-
   has_many :bookings
   belongs_to :organization
+  has_attachment :image
+  include PgSearch
+  multisearchable against: [:title, :description]
 end

@@ -4,7 +4,9 @@
     <li>
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <%= render @public_events %>
+          <% @public_events.each do |pe| %>
+          <%= render "events/event", event: pe %>
+          <% end %>
         </div>
       </div>
     </li>

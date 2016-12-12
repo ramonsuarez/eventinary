@@ -8,21 +8,18 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Event search form -->
-    <div>
-      <%= simple_form_for :search, html: {class: "navbar-wagon-search"} do |form| %>
+   <!-- <div>
+      <%= simple_form_for :search, method: :get, html: {class: "navbar-wagon-search"} do |form| %>
         <%= form.input :string, as: :search, placeholder: "Find an event", class: "navbar-wagon-search-input" %>
-        <!-- TODO remove button and include magnifying glass -->
         <%= form.button :submit, class: "navbar-wagon-search-btn" %>
       <% end %>
-    </div>
-    <!-- Search form by Le Wagon
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+    </div> --> -->
+    <form action="/" method="get" class="navbar-wagon-search">
+      <input type="text" name="search" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
-    -->
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
