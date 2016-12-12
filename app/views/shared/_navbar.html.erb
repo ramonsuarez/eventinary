@@ -1,12 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+  <%= image_tag "logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+<<<<<<< HEAD
     <!-- Event search form -->
     <form action="/" method="get" class="navbar-wagon-search">
       <input type="text" name="search" class="navbar-wagon-search-input" placeholder="Find an event">
@@ -15,17 +16,24 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
+=======
+    <!-- Search form -->
+    <%= form_tag(events_path, method: 'get', class: 'navbar-form navbar-right') do %>
+    <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Find an Evet' %>
+    <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
+    <% end %>
+>>>>>>> b8f52d0e186c213f1b58d38d5acfbd4948b412cc
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+    <!-- Notification -->
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+    <div class="badge-container">
+      <i class="fa fa-envelope-o"></i>
+      <div class="badge badge-blue">3</div>
+    </div>
+    <% end %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -33,12 +41,12 @@
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to User.find(current_user) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
@@ -50,11 +58,12 @@
           </ul>
         </div>
       </div>
+    </div>
 
     <% else %>
 
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <!-- Login text link -->
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
