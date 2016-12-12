@@ -1,22 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
-  <div class="banner-content">
-    <h1>Some Stuff</h1>
-    <p>Very cool stuff, useful and smart</p>
-    <a class="btn btn-primary btn-lg">GET IT</a>
-  </div>
-</div>
-<hr>
+<%= render "banner" %>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <%= render @public_events %>
-        <h3>Event Title</h3>
-        <p>Event Description</p>
-        <p>
-          <a href="#" class="btn btn-default">More Info</a>
-        </p>
-    </div>
+      <% @public_events.each do |event| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url('http://res.cloudinary.com/serendipity/image/upload/<%= event.image.path %>');">
+            <div class="card-description">
+              <h2><%= event.title %></h2>
+              <p><%= event.address %></p>
+            </div>
+
+            <%= link_to "More", event_path(event), class: "card-link" %>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
-

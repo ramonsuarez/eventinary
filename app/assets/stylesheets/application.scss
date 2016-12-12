@@ -14,4 +14,7 @@
 @import "pages/index";
 @import "events/*";
 @import "vendor/index";
-
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
