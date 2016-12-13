@@ -24,13 +24,13 @@
     <% if user_signed_in? %>
 
       <div class="col-xs-12 col-md-3">
-        <a href="#"><div class="sticky-to-bottom-button btn-treehouse text-center">RSVP</div></a>
+        <div class="text-center"><%= render "bookings/create" %></div>
       </div>
 
     <% else %>
 
       <div class="col-xs-12 col-md-3">
-        <div class="sticky-to-bottom-button btn-treehouse text-center disabled">RSVP</div>
+        <div class="text-center disabled"><%= render "bookings/create" %></div>
       </div>
 
     <% end %>
@@ -43,6 +43,8 @@
       </div>
     </div>
 
+    <hr/>
+    <%= social_share_button_tag(@event.title) %>
      <div class="row">
       <div class="col-xs-1 col-md-offset-2 text-right">
         <h4><i class="fa fa-calendar" aria-hidden="true"></i></h4>

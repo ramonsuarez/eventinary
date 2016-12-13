@@ -5,8 +5,10 @@
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootsy";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "social-share-button";
 
 // Your CSS
 @import "layout/index";
@@ -14,3 +16,26 @@
 @import "pages/index";
 @import "events/index";
 @import "vendor/index";
+
+
+//sign-up and login forms
+.authentication-container {
+background-color: #ffffff;
+padding: 30px;
+padding-top: 10 0 10 0;
+margin-top: 60px;
+border-radius: 4px;
+border: 1px solid #d2d6df;
+}
+
+.wrapper-sign-up-notification {
+  background-color: #F7F7F7;
+  margin-top: 1px;
+}
+
+//footer
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+

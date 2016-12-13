@@ -1,22 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
-  <div class="banner-content">
-    <h1>Some Stuff</h1>
-    <p>Very cool stuff, useful and smart</p>
-    <a class="btn btn-primary btn-lg">GET IT</a>
-  </div>
-</div>
-<hr>
-
+<% unless params[:search] %>
+<%= render "banner" %>
 <div class="container">
+  <% end %>
   <div class="row">
+    <% if params[:search] %>
+    <% @public_events.each do |pe| %>
+    <% if pe.searchable.public %>
     <div class="col-xs-12 col-sm-4">
-      <%= render @public_events %>
-        <h3>Event Title</h3>
-        <p>Event Description</p>
-        <p>
-          <a href="#" class="btn btn-default">More Info</a>
-        </p>
+      <%= render "pages/event", event: pe %>
+      <% end %>
+      <% end %>
+    </div>
+
+    <% else %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render "events/event" %>
+
+      <% end %>
     </div>
   </div>
 </div>
-

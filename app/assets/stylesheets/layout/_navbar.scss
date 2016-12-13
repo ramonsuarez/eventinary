@@ -36,7 +36,7 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 20px ;
 }
 
 /* Navbar standard link */
@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #2E73AF;
   text-decoration: none;
 }
 
@@ -53,17 +53,16 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #42A046;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #42A046;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #42A046;
+  border-color: #358739;
 }
 
 /* Navbar search form */
@@ -129,4 +128,12 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-wagon-login-link {
+  min-width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #616668;
+  font-size: 14px;
 }

@@ -19,6 +19,7 @@ production:
   FB_ID: "1430713150274444"
   FB_SECRET: "4c5e09d01b8702f067163b316bb1b1b9"
 
-  STRIPE_PUBLISHABLE_KEY: "sk_test_sLWPL6g2oggwv1WVGXSnmzdu"
-  STRIPE_SECRET_KEY: "pk_test_Ky9cibFg1knD47YxIyIW8sYa"
-
+development:
+  # TODO change with real keys for launch after testing
+  STRIPE_PUBLISHABLE_KEY: "pk_test_Ky9cibFg1knD47YxIyIW8sYa"
+  STRIPE_SECRET_KEY: "sk_test_sLWPL6g2oggwv1WVGXSnmzdu"
