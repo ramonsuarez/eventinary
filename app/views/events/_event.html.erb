@@ -1,5 +1,4 @@
-<div class="row">
-   <% @public_events.each do |event| %>
+ <% @public_events.each do |event| %>
    <div class="col-xs-12 col-sm-4">
      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url('http://res.cloudinary.com/serendipity/image/upload/<%= event.image.path %>');">
        <div class="card-description">
@@ -9,5 +8,4 @@
        <%= link_to "More", event_path(event), class: "card-link" %>
      </div>
    </div>
-   <% end %>
-</div>
+ <% end %>
