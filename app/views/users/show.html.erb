@@ -44,28 +44,80 @@
       </div>
     </div>
 
-    <% if @events_booked != nil %>
+    <div id="event_tabs" class="container" style="margin-top: 50px;">
+      <ul class="nav nav-tabs text-center" style="justify-content: center;">
+        <li style="width:33%;"><a href="#past_events" data-toggle="tab">Past Events</a></li>
+        <li style="width:33%;" class="active"><a href="#created_events" data-toggle="tab">Created Events</a></li>
+        <li style="width:33%;"><a href="#upcoming_events" data-toggle="tab">Upcoming Events</a></li>
+      </ul>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <hr/>
-        </div>
-      </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="created_events">
 
-      <% @events_booked.each do |event| %>
-        <div class="row">
-          <div class="col-xs-12">
-            <%= event.title %>
-            <%= event.attended %>
-            <%= event.cancelled %>
-            <%= link_to 'Show', event %> |
-            <%= link_to 'Edit', edit_event_path(event) %> |
-            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% current_user.organizations.each do |organization| %>
+
+              <% if organization.events.nil? %>
+
+                Nothing here!
+
+              <% else %>
+
+                <% organization.events.each do |event| %>
+                  <%= link_to event do %>
+                    <%= render "users/event", event: event %>
+                  <% end %>
+                <% end %>
+
+              <% end %>
+
+            <% end %>
+
+          </div>
+          <div class="tab-pane" id="upcoming_events">
+            <% if @events_booked.nil? %>
+
+              Nothing here!
+
+            <% else %>
+
+              <% @events_booked.each do |event| %>
+                <% if event.end > Time.now %>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <%= link_to event do %>
+                        <%= render "users/event", event: event %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+
+            <% end %>
+
+          </div>
+          <div class="tab-pane" id="past_events">
+            <% if @events_booked.nil? %>
+
+              Nothing here!
+
+            <% else %>
+
+            <% @events_booked.each do |event| %>
+                <% if event.end < Time.now %>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <%= link_to event do %>
+                      <%= render "users/event", event: event %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+
+          <% end %>
+
           </div>
         </div>
-      <% end %>
-
-    <% end %>
-
+    </div>
   </div>
 </section>
