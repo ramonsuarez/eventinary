@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
+
 // Graphical variables
 @import "config/variables";
 @import "config/bootstrap_variables";
@@ -16,6 +18,7 @@
 @import "pages/index";
 @import "events/index";
 @import "vendor/index";
+* {font-family: 'Ubuntu', sans-serif !important;}
 
 
 //sign-up and login forms
@@ -42,6 +45,8 @@
   }
 }
 
+//signin/up homepage padding
 .container {
   padding-bottom: 50px;
 }
+
