@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212162204) do
+ActiveRecord::Schema.define(version: 20161213115144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 20161212162204) do
     t.boolean  "cancelled"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.json     "stripe_payment_info"
-    t.integer  "penalty_fee_cents",   default: 0, null: false
+    t.integer  "penalty_fee_cents",    default: 0,     null: false
+    t.string   "penalty_fee_currency", default: "EUR", null: false
     t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
@@ -76,6 +77,8 @@ ActiveRecord::Schema.define(version: 20161212162204) do
     t.string   "status"
     t.integer  "penalty_fee_cents",    default: 0,     null: false
     t.string   "penalty_fee_currency", default: "EUR", null: false
+    t.integer  "organization_id"
+    t.index ["organization_id"], name: "index_events_on_organization_id", using: :btree
   end
 
   create_table "organizations", force: :cascade do |t|

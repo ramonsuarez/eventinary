@@ -1,6 +1,9 @@
+<!-- New Event Form -->
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+
       <%= simple_form_for event do |f| %>
       <h2>Event Details</h2>
       <% if event.errors.any? %>
@@ -19,29 +22,24 @@
       </div>
 
       <div>
-      <span>Location </span>
+        <span>Location </span>
         <%= radio_button_tag(:offline, true) %>
         <%= label_tag(:offline, "Enter address") %>
         <%= radio_button_tag(:offline, false) %>
         <%= label_tag(:offline, "Online event") %>
-
         <div class="online-fields">
           <div class="field">
             <%= f.input :online_url, placeholder: "Enter the event's website", label: false, class: "form-control" %>
           </div>
         </div>
-
         <div class="offline-fields">
           <div class="field">
             <%= f.input :venue, placeholder: "Venue Name", class: "form-control" %>
           </div>
-
           <div class="field">
             <%= f.input :address, placeholder: "Address", input_html: { class: "form-control js-search-autocomplete" } %>
           </div>
-
         </div>
-
       </div>
 
       <div class="field">
@@ -56,7 +54,6 @@
         <%= f.input :image, as: :attachinary %>
       </div>
 
-
       <div class="field">
         <%= f.input :description, as: :bootsy, class: "form-control" %>
       </div>
@@ -69,9 +66,8 @@
         <%= f.input :penalty_fee, placeholder: "No show charge", type: :number %>
       </div>
 
-
       <div class="field">
-      <span style="font-weight: 600">Cancellation Policy</span>
+        <span style="font-weight: 600">Cancellation Policy</span>
         <%= f.collection_radio_buttons :cancellation_policy, cancellation_policy_collection, :last, :first, item_wrapper_tag: :div do |b| %>
         <%= b.radio_button(value: b.text) + b.label(class: "collection_radio_buttons", value: b.text) %>
         <% end %>
@@ -81,6 +77,17 @@
         <%= f.input :public, label: "This is a public event" %>
       </div>
 
+      <!-- Organization -->
+      <div class='field'>
+      <%= f.input :organization_id, collection: current_user.organizations, placeholder: "Select existing Organizations" %>
+      </div>
+
+<%= link_to "+ Add New Organization", new_organization_path %>
+
+
+
+      <!-- Organization -->
+
       <div class="actions">
         <%= f.submit %>
       </div>
@@ -88,3 +95,4 @@
     </div>
   </div>
 </div>
+
