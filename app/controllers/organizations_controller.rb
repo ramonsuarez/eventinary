@@ -11,6 +11,7 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
+    @organization.user = current_user
     @organization.save!
     redirect_to organization_path(@organization)
   end
