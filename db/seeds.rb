@@ -209,3 +209,27 @@ b3 = Booking.create(
 b3.save
 
 p "Booking id #{b3.id}"
+
+
+#######
+# Link events to orgs
+#######
+
+e1.organization = o1
+e2.organization = o2
+e3.organization = o3
+e1.save
+e2.save
+e3.save
+
+#######
+# Link orgs to test user
+#######
+o1.user = u4
+o2.user = u4
+o3.user = u1
+o1.save
+o2.save
+o3.save
+
+
