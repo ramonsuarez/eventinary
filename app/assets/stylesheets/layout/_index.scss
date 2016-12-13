@@ -3,5 +3,9 @@
 @import "footer";
 
 .events-page, .organizations-page, .users-page {
+  margin-top: 0;
+  padding-top: 0;
+}
+.users-page {
   margin-top: 50px;
 }
