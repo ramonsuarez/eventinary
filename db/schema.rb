@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 20161212162204) do
     t.boolean  "cancelled"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.json     "stripe_payment_info"
-    t.integer  "penalty_fee_cents",   default: 0, null: false
+    t.integer  "penalty_fee_cents",    default: 0,     null: false
+    t.string   "penalty_fee_currency", default: "EUR", null: false
     t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
