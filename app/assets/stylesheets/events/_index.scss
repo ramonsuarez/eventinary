@@ -1,1 +1,21 @@
-@import "show";
+@import "form";
+
+.events-page {
+  & .col-md-4 .fixed-bottom {
+    position: relative;
+  }
+  & .col-xs-12 .fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  & .container-fluid {
+    position: relative;
+    border: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
