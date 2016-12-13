@@ -1,3 +1,7 @@
 @import "utilities";
 @import "navbar";
 @import "footer";
+
+.events-page, .organizations-page, .users-page {
+  margin-top: 50px;
+}

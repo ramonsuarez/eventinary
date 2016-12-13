@@ -14,8 +14,9 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
-@import "events/*";
+@import "events/index";
 @import "vendor/index";
+
 
 //sign-up and login forms
 .authentication-container {
@@ -37,5 +38,4 @@ border: 1px solid #d2d6df;
   padding-right: 0;
   padding-left: 0;
 }
-
 
