@@ -6,6 +6,7 @@
   position: relative;
   transition: all 200ms ease-in-out;
   border-radius: $border-radius-base;
+  margin-top: 30px;
 }
 .card:hover{
   transform: scale(1.05);
