@@ -89,7 +89,7 @@ u7 = User.create(
   email:"luay985@gmail.com",
   password: "luayadam"
   )
-u7.avatar =  open("http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1476697620/wwvl9ggha3mg5clsoswg.jpg", "r")
+u7.avatar =  open("https://lh3.googleusercontent.com/-PoF9r7-MiW4/U_7CfWwYYjI/AAAAAAAAAYI/NWIrjEbuZ7A/w640-h400-p-k/jim-parsons-2013-primetime-emmy-awards.jpg", "r")
 u7.save
 
 p "User id #{u7.id}"
@@ -191,48 +191,24 @@ Fintech Belgium is a federation for and by its members.",
   phone: "(+32) 479 27 29 29"
 )
 
-o4.logo =  open("http://fintechbelgium.be/wp-content/uploads/2016/01/fintech-logo-300x100-inverted.png", "r")
+o4.logo =  open("http://fintechbelgium.be/wp-content/uploads/2016/08/Meetup_roboadvisor_1-1024x512-480x240.jpg", "r")
 o4.save
 
 p "Organization id #{o4.id}"
 
-o4 = Organization.create!(
-  name: "Fintech Belgium",
-  url: "http://fintechbelgium.be",
-  description: "The first and biggest community of Fintechers in Belgium
 
-FinTech Belgium is the first and biggest community of Fintechers in Belgium.
-
-We are a community for financial professionals, startup entrepreneurs and investors, who are interested in discovering and discussing disruptive business models and new technology for the financial services industry.
-
-Fintech Belgium is a federation for and by its members.",
-  email: "info@fintechbelgium.be",
+o5 = Organization.create!(
+  name: "Le Wagon Brussels",
+  url: "https://www.lewagon.com/brussels",
+  description: "Working as a junior developer for Stripe, Algolia, Molotov, Save, Compass, 55, Save, etc.. We will help you find your dream job, either as a junior dev, product manager or growth hacker. Discuss with any of our alumni to find out more!",
+  email: "test@lewagon.org",
   phone: "(+32) 479 27 29 29"
 )
 
-o4.logo =  open("http://fintechbelgium.be/wp-content/uploads/2016/01/fintech-logo-300x100-inverted.png", "r")
-o4.save
+o5.logo =  open("http://www.technologium.be/wp-content/uploads/2015/03/logo-f800df98aa2605c552400667353f47d2.png", "r")
+o5.save
 
-p "Organization id #{o4.id}"
-
-o4 = Organization.create!(
-  name: "Fintech Belgium",
-  url: "http://fintechbelgium.be",
-  description: "The first and biggest community of Fintechers in Belgium
-
-FinTech Belgium is the first and biggest community of Fintechers in Belgium.
-
-We are a community for financial professionals, startup entrepreneurs and investors, who are interested in discovering and discussing disruptive business models and new technology for the financial services industry.
-
-Fintech Belgium is a federation for and by its members.",
-  email: "info@fintechbelgium.be",
-  phone: "(+32) 479 27 29 29"
-)
-
-o4.logo =  open("http://fintechbelgium.be/wp-content/uploads/2016/01/fintech-logo-300x100-inverted.png", "r")
-o4.save
-
-p "Organization id #{o4.id}"
+p "Organization id #{o5.id}"
 
 
 ###########
@@ -452,7 +428,7 @@ CreativeMornings Brussels aims to bring together people from these different com
    price: 0
  )
 
-e8.image =  open("http://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpghttp://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpg", "r")
+e8.image =  open("http://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpg", "r")
 e8.save
 
 p "Event id #{e8.id}"
@@ -535,3 +511,11 @@ b4 = Booking.create(
 b4.save
 
 p "Booking id #{b4.id}"
+
+b = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u4.id,
+  event_id: e2.id
+  )
+b.save
