@@ -1,19 +1,32 @@
-<div class="container">
-<h3>Confirm your booking for <strong><%= @booking.event.title %></strong></h3>
-<%= form_tag event_booking_payments_path(@booking) do %>
-  <article>
-    <label class="penalty_fee">
-      <span>No-Show Fee: <%= humanized_money_with_symbol(@booking.penalty_fee) %></span>
-    </label>
-    <br />
-    <span>This fee will only be charged if you don't attend the event</span>
-  </article>
+<section class="events-confirm-page">
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="Event Ticket"
-    data-description="Event <%= @booking.event.id %>"
-    data-amount="<%= @booking.penalty_fee_cents %>"
-    data-currency="<%= @booking.penalty_fee.currency %>"></script>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="ticket text-center">
+        <h3>Confirm your booking for <%= @booking.event.title %></h3>
+        <%= form_tag event_booking_payments_path(@booking) do %>
+
+
+          <p>No-Show Fee: <%= humanized_money_with_symbol(@booking.penalty_fee) %></p>
+
+
+          <p>This fee will only be charged if you don't attend the event</p>
+
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="Event Ticket"
+          data-description="Event <%= @booking.event.id %>"
+          data-amount="<%= @booking.penalty_fee_cents %>"
+          data-currency="<%= @booking.penalty_fee.currency %>"></script>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+</section>
