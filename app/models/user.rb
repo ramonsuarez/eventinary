@@ -31,9 +31,14 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def subscribe_to_newsletter
     SubscribeToNewsletterService.new(self).call
   end
+
 end
