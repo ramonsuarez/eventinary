@@ -1,3 +1,9 @@
+## First clean so no repeated objects
+Booking.destroy_all
+Event.destroy_all
+Organization.destroy_all
+User.destroy_all
+
 # Seed : Users, Organizations, Events and Bookings
 
 ###########
@@ -147,6 +153,9 @@ o1 = Organization.create!(
 )
 
 o1.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
+#adding user to organization - I have used the same user for all organizations, 
+# but different organizations created different event - I haven't tested the dashboard
+o1.user = u4
 o1.save
 
 p "Organization id #{o1.id}"
@@ -232,6 +241,8 @@ p "Organization id #{o5.id}"
  )
 
 e1.image =  open("http://www.westartup.eu/wp-content/uploads/2015/08/SW-FinTech-Cover-foto.jpg", "r")
+#adding an organization to an event
+e1.organization = o1
 e1.save
 
 p "Event id #{e1.id}"
@@ -252,6 +263,8 @@ e2 = Event.create(
  )
 
 e2.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+#adding an organization to an event
+e2.organization = o2
 e2.save
 
 p "Event id #{e2.id}"
@@ -279,6 +292,8 @@ price: 0
 )
 
 e3.image =  open("http://www.theeggbrussels.com/wp-content/uploads/2016/03/Tech-Startup-Days-3.jpg", "r")
+#adding an organization to an event
+e3.organization = o3
 e3.save
 
 p "Event id #{e3.id}"
@@ -477,7 +492,6 @@ b1.save
 
 p "Booking id #{b1.id}"
 
-
 b2 = Booking.create(
   attended: false,
   cancelled: false,
@@ -488,7 +502,6 @@ b2 = Booking.create(
 b2.save
 
 p "Booking id #{b2.id}"
-
 
 b3 = Booking.create(
   attended: false,
@@ -519,3 +532,26 @@ b = Booking.create(
   event_id: e2.id
   )
 b.save
+p "Booking id #{b.id}"
+
+
+#######
+# Link events to orgs
+#######
+
+e1.organization = o1
+e2.organization = o2
+e3.organization = o3
+e1.save
+e2.save
+e3.save
+
+#######
+# Link orgs to test user
+#######
+o1.user = u4
+o2.user = u4
+o3.user = u1
+o1.save
+o2.save
+o3.save

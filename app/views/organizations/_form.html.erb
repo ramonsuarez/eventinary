@@ -1,54 +1,51 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 
-      <%= simple_form_for organization do |f| %>
+<%= simple_form_for organization do |f| %>
 
-      <h2>Organization Profile</h2>
-
-      <% if organization.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
-
-        <ul>
-          <% organization.errors.full_messages.each do |message| %>
+  <% if organization.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h5>
+      <ul>
+        <% organization.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-          <% end %>
-        </ul>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>
+      <%= f.input :logo, as: :attachinary %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.input :name, label: "Organization Name", placeholder: 'Organization Name', class: "form-control" %>
+    </p>
+  </div>
+
+    <div class="field">
+      <%= f.input :description, as: :bootsy, class: "form-control" %>
+    </div>
+
+  <div class="field">
+    <p>
+      <%= f.input :url, placeholder: "Enter the URL of the organization", label: "Website", class: "form-control" %>
+    </p>
+  </div>
+
+  <div>
+    <div class="row">
+      <div class="field col-xs-6 col-md-6">
+        <%= f.input :email, class: "form-control" %>
       </div>
-      <% end %>
 
-      <div class="field">
-        <%= f.input :logo, as: :attachinary %>
+      <div class="field col-xs-6 col-md-6">
+        <%= f.input :phone, class: "form-control" %>
       </div>
-
-      <div class="field">
-        <%= f.input :name, label: "Organization Name", placeholder: 'Organization Name', class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.input :description, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.input :url, placeholder: "Enter the URL of the organization", label: "Website", class: "form-control" %>
-      </div>
-
-      <div>
-        <div class="row">
-          <div class="field col-xs-6 col-md-6 ">
-            <%= f.input :email, class: "form-control" %>
-          </div>
-
-          <div class="field col-xs-6 col-md-6">
-            <%= f.input :phone, class: "form-control" %>
-          </div>
-        </div>
-      </div>
-
-      <%= f.submit %>
-
     </div>
   </div>
-  <% end %>
-</div>
+
+  <%= f.submit %>
+
+<% end %>

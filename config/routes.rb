@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users, only: [:show, :update, :edit]
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  get 'profile', to: 'users#show'
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :organizations
+  resources :pages, only: [:home]
+  resources :organizations, only: [:new, :create, :edit, :update, :show ]
   resources :events do
-    resources :bookings
+    resources :bookings, only: [:show, :create] do
+      resources :payments, only: [:new, :create]
+    end
   end
 end
+
