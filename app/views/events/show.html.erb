@@ -1,8 +1,6 @@
 <% cloudinary_path = "http://res.cloudinary.com/serendipity/image/upload/" %>
 
-<% if current_user == @event.organization.user %>
-  <%=  render "events/dashboard", event: @event  %>
-<% else %>
+
   <section class="events-page">
 
     <% if @event.image %>
@@ -121,7 +119,7 @@
       </a>
     <% end %>
   </section>
-<% end %>
+
 
 <div class="button">
   <%= link_to 'Explore events list', events_path, class: 'btn btn-primary btn-lg' %>
