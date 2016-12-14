@@ -26,6 +26,8 @@ gem 'bootsy'
 gem 'money-rails'
 gem 'omniauth-facebook'
 gem 'social-share-button', '0.8.5'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 
 
 
