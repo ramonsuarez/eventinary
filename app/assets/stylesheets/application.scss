@@ -14,17 +14,18 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
-@import "events/*";
+@import "events/index";
 @import "vendor/index";
+
 
 //sign-up and login forms
 .authentication-container {
-background-color: #ffffff;
-padding: 30px;
-padding-top: 10 0 10 0;
-margin-top: 60px;
-border-radius: 4px;
-border: 1px solid #d2d6df;
+  background-color: #ffffff;
+  padding: 30px;
+  padding-top: 10 0 10 0;
+  margin-top: 60px;
+  border-radius: 4px;
+  border: 1px solid #d2d6df;
 }
 
 .wrapper-sign-up-notification {
@@ -32,10 +33,17 @@ border: 1px solid #d2d6df;
   margin-top: 1px;
 }
 
-//footer
-.container-fluid {
-  padding-right: 0;
-  padding-left: 0;
+//social-share-button
+.social-share-button {
+  .ssb-icon {
+    background-size: 30px 30px;
+    height: 50px;
+    width: 40px;
+  }
 }
 
+//signin/up homepage padding
+.container {
+  padding-bottom: 50px;
+}
 

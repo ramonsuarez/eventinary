@@ -10,7 +10,7 @@ class User < ApplicationRecord
  has_many :bookings
  has_many :events, through: :bookings
  has_many :events, through: :organizations
-
+ after_create :subscribe_to_newsletter
  def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
@@ -30,4 +30,15 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  private
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
+
 end

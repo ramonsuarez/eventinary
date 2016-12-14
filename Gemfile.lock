@@ -101,6 +101,9 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    gibbon (2.2.4)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.6)
@@ -265,6 +268,9 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.5)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -281,6 +287,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  gibbon
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
@@ -302,6 +309,8 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   stripe
   uglifier
+  will_paginate (~> 3.1.0)
+  will_paginate-bootstrap
 
 RUBY VERSION
    ruby 2.3.1p112

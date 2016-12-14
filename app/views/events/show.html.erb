@@ -1,128 +1,162 @@
-<p id="notice"><%= notice %></p>
-<section class="show-page">
-  <% if @event.image.path != nil %>
-    <div class="container-fluid">
-      <div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/serendipity/image/upload/<%= @event.image.path %>');">
-        <div class="ribbon"><span>Free</span>
+<% cloudinary_path = "http://res.cloudinary.com/serendipity/image/upload/" %>
+
+<% if current_user == @event.organization.user %>
+  <%=  render "events/dashboard", event: @event  %>
+<% else %>
+
+
+
+  <section class="events-page">
+
+    <% if @event.image %>
+      <div class="container-fluid">
+        <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cloudinary_path + @event.image.path %>');">
+          <div class="ribbon">
+            <span>Free</span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-3">
+          <h3><%= @event.title %></h3>
+          <h4><%= @event.organization.name unless @event.organization.nil? %></h4>
+        </div>
+        <div class="col-xs-12 col-md-4">
+
+          <% if user_signed_in? %>
+
+            <div class="text-center" style="margin-top: 10px;"><%= render "bookings/create" %></div>
+
+          <% else %>
+
+            <div class="text-center disabled" style="margin-top: 10px;"><%= render "bookings/create" %></div>
+
+          <% end %>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <hr/>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-xs-12 text-center">
+          <h6><%= social_share_button_tag(@event.title) %></h6>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <hr/>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-calendar" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+        <h4>Date & Time</h4>
+          <h6><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+          <h6><%= @event.end.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-map-marker" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4>Location</h4>
+          <% if @event.offline == true %>
+            <h6><%= @event.venue %></h6>
+            <h6><%= @event.address %></h6>
+            <h6 class="text-center"><a href="#map">Show map</a></h6>
+          <% else %>
+            <h4>Online url:</h4>
+            <h6><%= @event.online_url %></h6>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-file-text-o" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4>Description:</h4>
+          <h6><%= @event.description %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-ticket" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4># Quantity:</h4>
+          <h6><%= @event.quantity %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-exclamation" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4>Penalty fee:</h4>
+          <h6><%= humanized_money_with_symbol(@event.penalty_fee) %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-exclamation" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4>Cancellation policy:</h4>
+          <h6><%= @event.cancellation_policy %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 col-md-offset-2 text-right">
+          <h4><i class="fa fa-euro" aria-hidden="true"></i></h4>
+        </div>
+        <div class="col-xs-11 col-md-6">
+          <h4>Price:</h4>
+          <h6><%= @event.price %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <hr/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <% if user_signed_in? %>
+            <%= link_to 'Edit', edit_event_path(@event) %>
+            |
+          <% end %>
+          <%= link_to 'Back', events_path %>
         </div>
       </div>
     </div>
-  <% end %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h3><%= @event.title %></h3>
-        <h4>Name of Organization</h4>
+
+    <% if @event.offline == true %>
+      <div class="container-fluid">
+        <a name="map"></a>
+        <div class="row">
+          <a href="https://www.google.com/maps/dir//<%= @event.address %>/" target="_blank">
+            <div class="col-xs-12" style="height: 500px; margin: 25px 0 0 0; background: url('http://maps.google.com/maps/api/staticmap?center=<%= @event.address %>&zoom=15&size=640x640&maptype=roadmap&markers=color:ORANGE|label:A|<%= @event.address %>&sensor=false') center no-repeat; width:100%;"></div>
+          </a>
+        </div>
       </div>
-
-    <% if user_signed_in? %>
-
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center"><%= render "bookings/create" %></div>
-      </div>
-
-    <% else %>
-
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center disabled"><%= render "bookings/create" %></div>
-      </div>
-
     <% end %>
 
-    </div>
-    <hr/>
-    <%= social_share_button_tag(@event.title) %>
-     <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-      <h4>Date & Time</h4>
-        <h6><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></h6>
-        <h6><%= @event.end.strftime("%m/%d/%Y at %I:%M%p") %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4>Location</h4>
-        <% if @event.offline == true %>
-          <h6><%= @event.venue %></h6>
-          <h6><%= @event.address %></h6>
-          <h6 class="text-center"><a href="#map">Show map</a></h6>
-        <% else %>
-          <h4>Online url:</h4>
-          <h6><%= @event.online_url %></h6>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-file-text-o" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4>Description:</h4>
-        <h6><%= @event.description %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-ticket" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4># Quantity:</h4>
-        <h6><%= @event.quantity %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-exclamation" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4>Penalty fee:</h4>
-        <h6><%= humanized_money_with_symbol(@event.penalty_fee) %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-exclamation" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4>Cancellation policy:</h4>
-        <h6><%= @event.cancellation_policy %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 col-md-offset-2">
-        <i class="fa fa-euro" aria-hidden="true"></i>
-      </div>
-      <div class="col-xs-11 col-md-6">
-        <h4>Price:</h4>
-        <h6><%= @event.price %></h6>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-8 col-md-6 col-md-offset-3">
-        <% if user_signed_in? %>
-          <%= link_to 'Edit', edit_event_path(@event) %>
-          |
-        <% end %>
-        <%= link_to 'Back', events_path %>
-      </div>
-    </div>
-  </div>
-
-
-  <% if @event.offline == true %>
-    <div class="container-fluid">
-      <a name="map"></a>
-      <div class="row">
-        <a href="https://www.google.com/maps/dir//<%= @event.address %>/" target="_blank">
-          <div class="col-xs-12" style="height: 500px; margin: 25px 0 0 0; background: url('http://maps.google.com/maps/api/staticmap?center=<%= @event.address %>&zoom=15&size=640x640&maptype=roadmap&markers=color:ORANGE|label:A|<%= @event.address %>&sensor=false') center no-repeat; width:100%;"></div>
-        </a>
-      </div>
-    </div>
-  <% end %>
-</section>
+  </section>
+<% end %>

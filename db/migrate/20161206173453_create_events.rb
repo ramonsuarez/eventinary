@@ -16,7 +16,6 @@ def change
       t.datetime :end
       t.string :image
       t.text :description
-      # t.organization :references
       t.string :ticket_name
       t.integer :quantity
       t.integer :penalty_fee
