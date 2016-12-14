@@ -1,7 +1,7 @@
-class EventPolicy < ApplicationPolicy
+class OrganizationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope
     end
   end
 
@@ -12,20 +12,16 @@ class EventPolicy < ApplicationPolicy
   def create?
     return true
   end
-  def show?
-    return true
-  end
 
   def edit?
     return update?
   end
 
   def update?
-    record.organization.user == user
+    record.user == user
   end
 
-  def destroy?
-    record.organization.user == user
+  def show?
+    record.user == user
   end
-
 end

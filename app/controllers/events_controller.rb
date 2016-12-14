@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.page(params[:page]).order('created_at DESC')
+    @events = policy_scope(Event.page(params[:page])).order('created_at DESC')
   end
 
   # GET /events/1
@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    authorize @event
   end
 
   # GET /events/1/edit
@@ -30,6 +31,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.offline = params[:offline]
+    authorize @event
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
