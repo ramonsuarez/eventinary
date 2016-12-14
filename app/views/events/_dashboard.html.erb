@@ -12,14 +12,9 @@
 
       <div class="row">
         <h2>Event Dashboard</h2>
-        <div class="col-md-8">
+        <div class="col-md-8 wrapper-tickets">
           <ul class="collection">
           <h2>List of Attendants</h2>
-            <form class="form-control text-center">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <input type="text" name="search" placeholder="Search...">
-            </form>
-
             <% event.bookings.each do |booking| %>
             <div class="row">
               <div class="col-xs-12 col-md-8 col-md-offset-2">
