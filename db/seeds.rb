@@ -337,33 +337,64 @@ e4.save
 p "Event id #{e4.id}"
 
 e5 = Event.create(
-   title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
+   title: "Doing Business in Belgium – Legal Pack for Start Ups by Erik de Herdt" ,
    offline: true,
-   venue: "Betacowork Coworking Brussels",
+   venue: "Betacowork Coworking Brussels, 1040, Brussels",
    address: "Rue de pères blancs 4",
    start: "Fri, 16 Oct 2017 18:00:00 UTC +00:00",
    end: "Fri, 16 Oct 2017 20:00:00 UTC +00:00",
-   description: "What will you do?play-stone-1237458_1280 Ice-breaker & Intro 5 minutes recap’ on Agile principles + 5 minutes recap on Improv principles Agile principles and improv tips and tricks: why & how do they cross-fertilize each other? Warm-up A few quick and easy improv warm-up exercises, to get you going and break the ice. The (not so) serious stuff We will go through some of the most well-known improv games (the robot game, saying yes, etc), explain what purpose they serve and how they relate and can be leveraged in your to agile practice. Wrap-up & take-away’s When and Where? Thursday 24th of November from 7PM to 9.30PM in Room Azzar (ICAB Business & Technology Incubator). Powered by Eventbrite David Zöllner – Digital Learning Specialist David is a digital learning specialist who uses playfulness, fun and curiosity to create engaging and motivating trainings which target business objectives. During the past years, he developed many game-based online business trainings for various market leading companies. For the development of his concepts, he uses profound knowledge of learning methods, his experience with corporate training structures and also his passion for games, narratives and improvisational theatre.",
+   description: "What is the most appropriate vehicle for my business?
+What do I need to know to sign contracts with customers and suppliers?
+Are there any specific rules for online business and e-commerce?
+How can I protect my intellectual property?
+Key legal documents for start ups.
+Erik de Herdt will answer to all these questions.",
    quantity: 20,
    penalty_fee: 35,
-   cancellation_policy: "Moderate",
+   cancellation_policy: "Flexible",
    public: true,
    price: 0
  )
 
-e5.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e5.image =  open("http://www.betacowork.com/wp-content/uploads/law-400x267.jpg", "r")
 e5.save
 
 p "Event id #{e5.id}"
 
 e6 = Event.create(
-   title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
+   title: "The 10 Best Tools to Hack your Growth in 2017" ,
    offline: true,
    venue: "Betacowork Coworking Brussels",
-   address: "Rue de pères blancs 4",
+   address: "Rue de pères blancs 4, etterbeek, brussels",
    start: "Fri, 16 Oct 2017 18:00:00 UTC +00:00",
    end: "Fri, 16 Oct 2017 20:00:00 UTC +00:00",
-   description: "What will you do?play-stone-1237458_1280 Ice-breaker & Intro 5 minutes recap’ on Agile principles + 5 minutes recap on Improv principles Agile principles and improv tips and tricks: why & how do they cross-fertilize each other? Warm-up A few quick and easy improv warm-up exercises, to get you going and break the ice. The (not so) serious stuff We will go through some of the most well-known improv games (the robot game, saying yes, etc), explain what purpose they serve and how they relate and can be leveraged in your to agile practice. Wrap-up & take-away’s When and Where? Thursday 24th of November from 7PM to 9.30PM in Room Azzar (ICAB Business & Technology Incubator). Powered by Eventbrite David Zöllner – Digital Learning Specialist David is a digital learning specialist who uses playfulness, fun and curiosity to create engaging and motivating trainings which target business objectives. During the past years, he developed many game-based online business trainings for various market leading companies. For the development of his concepts, he uses profound knowledge of learning methods, his experience with corporate training structures and also his passion for games, narratives and improvisational theatre.",
+   description: "• Increase your conversion online
+
+• Reach more customers
+
+• Understand the power of Facebook Ads.
+
+
+You don’t know what Facebook Ads is? Do you think Facebook Ads are not for you? That your customers are not reachable via this channel? With over 1.7 billion users, are you really sure your customers are not on Facebook?
+
+
+Combining the power of Facebook Ads with the insights from Facebook Pixel help you to reach more clients, to increase your conversion and to target and retarget more efficiently your customer’s segments. In this presentation, you will learn what are Facebook Ads and Instagram Ads, what are the options and their benefits, how to implement efficiently Facebook Pixel and how to use it insights to retarget potential customers. You will also discover how you can mix acquisitions from other channels with Facebook Ads to retarget more efficiently your audience.
+
+About the speaker:
+
+Jean-Christophe has a long experience in digital marketing. With more than 10 years in communication agency and 4 years in a startup specialised on social networks technologies, he has acquired a certain experience of the field. Combined with his knowledge of technologies, he can mix it with marketing strategies to automate and improve growth of your company.
+
+Programme:
+
+• 18h30: Welcome and drinks
+
+• 19h15: Facebook and Instagram Ads explained
+
+• 20h00: Drinks and networking
+
+About the organisation:
+
+This meetup is organised and sponsored by Betacowork, ICAB and MAD Kings. Thanks for their support.",
    quantity: 20,
    penalty_fee: 35,
    cancellation_policy: "Moderate",
@@ -371,19 +402,27 @@ e6 = Event.create(
    price: 0
  )
 
-e6.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e6.image =  open("http://abdevlabs.com/wp-content/uploads/2014/02/growth-hacker-funnel.jpg", "r")
 e6.save
 
 p "Event id #{e6.id}"
 
 e7 = Event.create(
-   title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
+   title: "Comment lancer son business compte Instagram – Atelier par Eléonore Degand" ,
    offline: true,
    venue: "Betacowork Coworking Brussels",
-   address: "Rue de pères blancs 4",
+   address: "Rue de pères blancs 4, ETTERBEEK, BELGIUM",
    start: "Fri, 16 Oct 2016 18:00:00 UTC +00:00",
    end: "Fri, 16 Oct 2016 20:00:00 UTC +00:00",
-   description: "What will you do?play-stone-1237458_1280 Ice-breaker & Intro 5 minutes recap’ on Agile principles + 5 minutes recap on Improv principles Agile principles and improv tips and tricks: why & how do they cross-fertilize each other? Warm-up A few quick and easy improv warm-up exercises, to get you going and break the ice. The (not so) serious stuff We will go through some of the most well-known improv games (the robot game, saying yes, etc), explain what purpose they serve and how they relate and can be leveraged in your to agile practice. Wrap-up & take-away’s When and Where? Thursday 24th of November from 7PM to 9.30PM in Room Azzar (ICAB Business & Technology Incubator). Powered by Eventbrite David Zöllner – Digital Learning Specialist David is a digital learning specialist who uses playfulness, fun and curiosity to create engaging and motivating trainings which target business objectives. During the past years, he developed many game-based online business trainings for various market leading companies. For the development of his concepts, he uses profound knowledge of learning methods, his experience with corporate training structures and also his passion for games, narratives and improvisational theatre.",
+   description: "Pendant mon stage d’un mois,je me suis rendue compte que à ma grande surprise le Betacowork était dépourvu d’un compte instagram. Avec l’aide de ma maitre de stage Sara, nous avons décidé de remédier à ça.Venez suivre quelques astuces pour vous aussi pouvoir optimiser au mieux votre nouveau compte instagram pour le business.
+
+Grands points de la présentation
+Avant le lancement du compte
+Le premier poste
+Contenu de l’instagram
+Augmenter son nombre de followers
+Trouver le bon #
+",
    quantity: 20,
    penalty_fee: 35,
    cancellation_policy: "Moderate",
@@ -391,19 +430,21 @@ e7 = Event.create(
    price: 0
  )
 
-e7.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e7.image =  open("http://www.betacowork.com/wp-content/uploads/Instagram_App_Large_May2016_200.png", "r")
 e7.save
 
 p "Event id #{e7.id}"
 
 e8 = Event.create(
-   title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
+   title: "Creative Mornings @Beursschouwburg - Sound" ,
    offline: true,
-   venue: "Betacowork Coworking Brussels",
-   address: "Rue de pères blancs 4",
+   venue: "BeursCafé, at Beursschouwburg",
+   address: "Rue Auguste Orts 20-28, 1000 Bruxelles",
    start: "Fri, 16 Oct 2016 18:00:00 UTC +00:00",
    end: "Fri, 16 Oct 2016 20:00:00 UTC +00:00",
-   description: "What will you do?play-stone-1237458_1280 Ice-breaker & Intro 5 minutes recap’ on Agile principles + 5 minutes recap on Improv principles Agile principles and improv tips and tricks: why & how do they cross-fertilize each other? Warm-up A few quick and easy improv warm-up exercises, to get you going and break the ice. The (not so) serious stuff We will go through some of the most well-known improv games (the robot game, saying yes, etc), explain what purpose they serve and how they relate and can be leveraged in your to agile practice. Wrap-up & take-away’s When and Where? Thursday 24th of November from 7PM to 9.30PM in Room Azzar (ICAB Business & Technology Incubator). Powered by Eventbrite David Zöllner – Digital Learning Specialist David is a digital learning specialist who uses playfulness, fun and curiosity to create engaging and motivating trainings which target business objectives. During the past years, he developed many game-based online business trainings for various market leading companies. For the development of his concepts, he uses profound knowledge of learning methods, his experience with corporate training structures and also his passion for games, narratives and improvisational theatre.",
+   description: "Brussels is not only the capital of Europe, but a beautiful and very diverse city, with a multitude of nationalities, cultures and languages.
+
+CreativeMornings Brussels aims to bring together people from these different communities, connect and inspire them! Throughout the monthly events, it will look at creativity from multiple angles, including art, business and technology, and welcoming creative people, in a broad sense. ",
    quantity: 20,
    penalty_fee: 35,
    cancellation_policy: "Moderate",
@@ -411,19 +452,27 @@ e8 = Event.create(
    price: 0
  )
 
-e8.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e8.image =  open("http://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpghttp://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpg", "r")
 e8.save
 
 p "Event id #{e8.id}"
 
 e9 = Event.create(
-   title: "Say Yes! Speed up agile adoption with Improv games – Workshop" ,
+   title: "Cold Calling Tips and Tricks – Workshop by Ygal Levy" ,
    offline: true,
    venue: "Betacowork Coworking Brussels",
-   address: "Rue de pères blancs 4",
+   address: "Rue de pères blancs 4, 1040, Belgique",
    start: "Fri, 16 Oct 2016 18:00:00 UTC +00:00",
    end: "Fri, 16 Oct 2016 20:00:00 UTC +00:00",
-   description: "What will you do?play-stone-1237458_1280 Ice-breaker & Intro 5 minutes recap’ on Agile principles + 5 minutes recap on Improv principles Agile principles and improv tips and tricks: why & how do they cross-fertilize each other? Warm-up A few quick and easy improv warm-up exercises, to get you going and break the ice. The (not so) serious stuff We will go through some of the most well-known improv games (the robot game, saying yes, etc), explain what purpose they serve and how they relate and can be leveraged in your to agile practice. Wrap-up & take-away’s When and Where? Thursday 24th of November from 7PM to 9.30PM in Room Azzar (ICAB Business & Technology Incubator). Powered by Eventbrite David Zöllner – Digital Learning Specialist David is a digital learning specialist who uses playfulness, fun and curiosity to create engaging and motivating trainings which target business objectives. During the past years, he developed many game-based online business trainings for various market leading companies. For the development of his concepts, he uses profound knowledge of learning methods, his experience with corporate training structures and also his passion for games, narratives and improvisational theatre.",
+   description: "Want to learn more about Cold Calling for your client or partnership prospection? Get first hand-experience from Ygal on how he’s been closing 1000 partnerships in a year through e-mail campaigns and cold calling.
+
+secretary-1149302_640
+
+What will you learn:
+What are the general rules;
+Approaches and tips to catch a person’s interest and closing down a sale/partnership.
+Who is Ygal Levy?
+Ygal Levy is in charge of the development of Bird Office in Belgium for the past year. Bird Office is the “Airbnb of meeting and conference rooms” and has a presence in France, Belgium, the UK, Luxembourg and Switzerland. Like Airbnb we don’t own any physical meeting rooms but propose those professional spaces from hotels, coworking, business centres and any other company with available meeting spaces that are underused (offices of coaches, architects, lawyers, headhunters etc.)",
    quantity: 20,
    penalty_fee: 35,
    cancellation_policy: "Moderate",
@@ -431,7 +480,7 @@ e9 = Event.create(
    price: 0
  )
 
-e9.image =  open("http://www.betacowork.com/wp-content/uploads/The-Global-Lens%E2%84%A2-Betacowork-Staff-8008074-6.jpg", "r")
+e9.image =  open("http://www.betacowork.com/wp-content/uploads/secretary-1149302_640-400x283.jpg", "r")
 e9.save
 
 p "Event id #{e9.id}"
