@@ -63,7 +63,7 @@
               <% else %>
 
                 <% organization.events.each do |event| %>
-                  <%= link_to event do %>
+                  <%= link_to admin_event_path(event) do %>
                     <%= render "users/event", event: event %>
                   <% end %>
                 <% end %>
