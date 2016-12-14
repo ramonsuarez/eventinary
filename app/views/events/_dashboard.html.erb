@@ -1,0 +1,18 @@
+<h1>Dashboard</h1>
+
+<p>Total number of tickets: <%= event.quantity %></p>
+
+
+<p>Tickets booked: <%= event.bookings.count %></p>
+
+<p>Remaining Tickets: <%= event.quantity - event.bookings.count %></p>
+
+<ul>
+  <% event.bookings.each do |booking| %>
+  <li>
+    <%= cl_image_tag booking.user.avatar.path %>
+    <p><%= booking.user.full_name %></p>
+    <%= check_box_tag("attended", "yes", booking.attended)%>
+  </li>
+  <% end %>
+</ul>
