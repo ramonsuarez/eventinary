@@ -4,18 +4,18 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.page(params[:page]).order('created_at DESC')
+    @events = policy_scope(Event.page(params[:page])).order('created_at DESC')
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    @events = Event.order("created_at desc").limit(6)
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    authorize @event
   end
 
   # GET /events/1/edit
@@ -31,6 +31,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.offline = params[:offline]
+    authorize @event
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -70,6 +71,7 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+      authorize @event
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

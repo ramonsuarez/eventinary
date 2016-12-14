@@ -2,16 +2,17 @@ class OrganizationsController < ApplicationController
     before_action :set_organization, only: [:show,  :edit, :update]
 
   def show
-    @organizations = Organization.all
   end
 
   def new
     @organization = Organization.new
+    authorize @organization
   end
 
   def create
     @organization = Organization.new(organization_params)
     @organization.user = current_user
+    authorize @organization
     @organization.save!
     redirect_to organization_path(@organization)
   end
@@ -21,6 +22,7 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization.update(organization_params)
+    redirect_to organization_path(@organization)
   end
 
   def events
@@ -31,6 +33,7 @@ class OrganizationsController < ApplicationController
 
   def set_organization
     @organization = Organization.find(params[:id])
+    authorize @organization
   end
 
   def organization_params
