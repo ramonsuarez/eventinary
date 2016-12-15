@@ -19,8 +19,8 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="Event Ticket"
           data-description="Event <%= @booking.event.id %>"
-          data-amount="<%= @booking.penalty_fee_cents %>"
-          data-currency="<%= @booking.penalty_fee.currency %>"></script>
+          data-label="Add card"
+          data-panel-label="Charge me if I don't go!"</script>
         <% end %>
 
       </div>
