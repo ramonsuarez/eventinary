@@ -1,4 +1,8 @@
-<div class="card" style="margin-top:10px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/serendipity/image/upload/<%= event.searchable.image.path %>');">
+<div class="card" style="margin-top:10px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+  <div class="card-image">
+    <%= image_tag ('http://res.cloudinary.com/serendipity/image/upload/<%= event.searchable.image.path %>') %>
+  </div>
+
   <div class="card-description">
     <h2><%= event.searchable.title %></h2>
     <p><%= event.searchable.address %></p>
