@@ -19,7 +19,11 @@
           </div>
           <div class="col-xs-12 col-md-4">
             <% if user_signed_in? %>
-              <%= render "bookings/create" %>
+              <% unless @event.bookings.find_by(user_id: current_user.id).nil? %>
+                <%= render "bookings/booking" %>
+              <% else %>
+                <%= render "bookings/create" %>
+              <% end %>
             <% else %>
               <%= render "bookings/create" %>
             <% end %>
