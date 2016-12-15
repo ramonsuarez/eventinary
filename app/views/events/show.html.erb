@@ -1,8 +1,6 @@
 <% cloudinary_path = "http://res.cloudinary.com/serendipity/image/upload/" %>
 
-<% if current_user == @event.organization.user %>
-  <%=  render "events/dashboard", event: @event  %>
-<% else %>
+
   <section class="events-page">
 
     <% if @event.image %>
@@ -21,12 +19,16 @@
           </div>
           <div class="col-xs-12 col-md-4">
             <% if user_signed_in? %>
-              <%= render "bookings/create" %>
+              <% unless @event.bookings.find_by(user_id: current_user.id).nil? %>
+                <%= render "bookings/booking" %>
+              <% else %>
+                <%= render "bookings/create" %>
+              <% end %>
             <% else %>
               <%= render "bookings/create" %>
             <% end %>
 
-            <% if user_signed_in? %>
+            <% if policy(@event).edit? %>
               <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default'   %>
             <% end %>
 
@@ -108,9 +110,7 @@
             <p><%= @event.price %></p>
           </div>
         </div>
-
-        <%= social_share_button_tag(@event.title) %>
-
+    <%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %>
       </div>
     </div>
 
@@ -121,7 +121,7 @@
       </a>
     <% end %>
   </section>
-<% end %>
+
 
 <div class="button">
   <%= link_to 'Explore events list', events_path, class: 'btn btn-primary btn-lg' %>

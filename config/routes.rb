@@ -11,5 +11,9 @@ Rails.application.routes.draw do
       resources :payments, only: [:new, :create]
     end
   end
+
+  namespace :admin do
+    resources :events, only: [:show]
+  end
 end
 
