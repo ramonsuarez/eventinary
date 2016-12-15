@@ -11,7 +11,11 @@
 
   <div class="card-description">
     <div class="card-description-content">
-      <h2><%= event.searchable.title %></h2>
+      <% if event.searchable.title.length >= 65 %>
+        <h2><%= event.searchable.title.first(65) %>...</h2>
+      <% else %>
+        <h2><%= event.searchable.title %></h2>
+      <% end  %>
       <p><%= event.searchable.address %></p>
     </div>
   </div>

@@ -1,1 +1,12 @@
-<h2><%= event.title %></h2>
+<div class="tab-ticket">
+  <div class="tab-text">
+    <h2><%= event.title %></h2>
+
+    <p><%= event.start.strftime('%a, %b %d').upcase %></p>
+  </div>
+  <div class="tab-action">
+    <div class="btn navbar-wagon-button btn-white" style="color: grey;">
+      Cancel
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@
 
     <div class="container">
       <div class="ticket">
-        <div class="row">
+        <div class="row" style="margin-bottom: 70px;">
 
           <div class="col-xs-12 col-md-8">
             <h3><%= @event.title %></h3>
@@ -60,7 +60,7 @@
               <p><%= @event.venue %></p>
               <p><%= @event.address %></p>
             <% else %>
-              <h4>Online url:</h4>
+              <h4>Online url</h4>
               <p><%= @event.online_url %></p>
             <% end %>
           </div>
@@ -80,8 +80,8 @@
             <h4><i class="fa fa-ticket"></i></h4>
           </div>
           <div class="col-xs-11">
-            <h4># Quantity:</h4>
-            <p><%= @event.quantity %></p>
+            <h4>Remaining Tickets</h4>
+            <p><%= @event.quantity - @event.bookings.count %></p>
           </div>
         </div>
         <div class="row">
@@ -89,7 +89,7 @@
             <h4><i class="fa fa-exclamation"></i></h4>
           </div>
           <div class="col-xs-11">
-            <h4>Penalty fee:</h4>
+            <h4>Penalty fee</h4>
             <p><%= humanized_money_with_symbol(@event.penalty_fee) %></p>
           </div>
         </div>
@@ -98,7 +98,7 @@
             <h4><i class="fa fa-exclamation"></i></h4>
           </div>
           <div class="col-xs-11">
-            <h4>Cancellation policy:</h4>
+            <h4>Cancellation policy</h4>
             <p><%= @event.cancellation_policy %></p>
           </div>
         </div>
@@ -107,11 +107,19 @@
             <h4><i class="fa fa-euro"></i></h4>
           </div>
           <div class="col-xs-11">
-            <h4>Price:</h4>
+            <h4>Price</h4>
             <p><%= @event.price %></p>
           </div>
         </div>
-    <%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %>
+        <div class="row">
+          <div class="col-xs-1 text-right">
+          </div>
+          <div class="col-xs-11">
+            <div style="margin-left: -15px;">
+             <%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

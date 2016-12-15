@@ -2,6 +2,15 @@
   display: block ;
 }
 
+#location label[for="offline"] {
+  margin-right: 25px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+
 #offline_true:checked + label + input + label + .online-fields + .offline-fields {
   display: block ;
 }
