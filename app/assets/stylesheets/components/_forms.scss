@@ -1,0 +1,11 @@
+.money-form {
+  position:relative;
+
+  &::before {
+    content: "\25AE";
+    font-family: FontAwesome;
+    left:-5px;
+    position:absolute;
+    top:0;
+ }
+}

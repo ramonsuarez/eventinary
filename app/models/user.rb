@@ -10,7 +10,8 @@ class User < ApplicationRecord
  has_many :bookings
  has_many :events, through: :bookings
  has_many :events, through: :organizations
- after_create :subscribe_to_newsletter
+ # after_create :subscribe_to_newsletter
+
  def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email

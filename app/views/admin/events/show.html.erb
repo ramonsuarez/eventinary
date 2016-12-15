@@ -6,7 +6,7 @@
         <h4><%= @event.organization.name unless @event.organization.nil? %></h4>
         <p><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></p>
 
-        <h6><%= social_share_button_tag(@event.title) %></h6>
+        <h6><%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %></h6>
 
         <%= link_to "Event Details", event_path(@event), class: "btn btn-primary" %>
       </d>

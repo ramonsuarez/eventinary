@@ -1,7 +1,19 @@
-<div class="card" style="margin-top:10px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/serendipity/image/upload/<%= event.searchable.image.path %>');">
+<div class="card">
+  <div class="card-header">
+    <div class="card-image" style="background-image: url('http://res.cloudinary.com/serendipity/image/upload/<%= event.searchable.image.path %>');">
+    </div>
+    <div class="card-date">
+      <p>
+        <%= event.searchable.start.strftime('%a, %b %d').upcase %>
+      </p>
+    </div>
+  </div>
+
   <div class="card-description">
-    <h2><%= event.searchable.title %></h2>
-    <p><%= event.searchable.address %></p>
+    <div class="card-description-content">
+      <h2><%= event.searchable.title %></h2>
+      <p><%= event.searchable.address %></p>
+    </div>
   </div>
   <%= link_to "Attend", event_path(event.searchable), class: "card-link"  %>
 </div>
