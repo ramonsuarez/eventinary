@@ -1,14 +1,20 @@
 <!-- Stripe success page -->
 <div class="events-sucess-page">
-  <h1>🎉</h1>
-  <h2>Your booking is confirmed!</h2>
-  <%= "Here's a recap of your event: " %>
-  <ul class="text-left ">
-    <li><%= @booking.event.title%></li>
-    <li><%= @booking.event.start.strftime("Starts at %H:%M on %A, %d-%B-%y") %></li>
-    <li><%= @booking.event.start.strftime("Ends at %H:%M on %A, %d-%B-%y") %></li>
-    <li>"Venue: #{<%= @booking.event.venue%>}"</li>
-    <li>"Address: <%= @booking.event.address%></li>
-  </ul>
-  <h5><%= link_to "Add to your calendar", "#", class: "btn btn-primary" %></h5>
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3"  style="padding-bottom: 20px; background: white">
+        <h3 class="text-left">Your booking is confirmed!</h3>
+        <ul class="text-left ">
+          <p> Here's a recap of your event: </p>
+          <li><%= @booking.event.title%></li>
+          <li><%= @booking.event.start.strftime("Starts at %H:%M on %A, %d-%B-%Y") %></li>
+          <li><%= @booking.event.start.strftime("Ends at %H:%M on %A, %d-%B-%Y") %></li>
+          <li>"Venue: <%= @booking.event.venue%>"</li>
+          <li>"Address: <%= @booking.event.address%></li>
+        </ul>
+        <div class="text-center" style="margin: 0 auto"><%= link_to "Back to the event", event_path(@booking.event.id), class: "btn btn-primary" %>   <%= link_to "Add to your calendar", "#", class: "btn btn-primary" %></div>
+      </div>
+    </div>
+  </div>
 </div>
+
