@@ -3,4 +3,7 @@ class Admin::EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize [:admin, @event]
   end
+
+  def payment
+  end
 end

@@ -5,6 +5,14 @@ class BookingsController < ApplicationController
     redirect_to new_event_booking_payment_path(@event.id, booking)
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(attended:params[:attended])
+    p params
+    p @booking.attended
+  end
+
   def cancel
   end
+
 end
