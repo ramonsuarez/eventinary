@@ -2,6 +2,7 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
+<% @user = current_user %>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <form action="/" method="get" class="navbar-wagon-search">
@@ -13,17 +14,12 @@
 
 
     <% if user_signed_in? %>
-
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+    <% cloudinary_path = "http://res.cloudinary.com/serendipity/image/upload/" %>
 
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <div class="navbar-wagon-menu" style="background-size:cover;background-position:center;border-radius:50%;background-image: url('<%= cloudinary_path + @user.avatar.path %>');width:40px;height:40px;" data-toggle="dropdown"></div>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to profile_path do %>

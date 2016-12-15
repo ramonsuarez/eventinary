@@ -11,9 +11,14 @@ Rails.application.routes.draw do
       resources :payments, only: [:new, :create]
     end
   end
+  resources :bookings, only: [:update]
 
   namespace :admin do
-    resources :events, only: [:show]
+    resources :events, only: [:show] do
+      member do
+        get 'payment'
+      end
+    end
   end
 end
 
