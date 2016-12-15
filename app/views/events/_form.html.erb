@@ -4,8 +4,8 @@
       <%= f.input :title, label: "Event Name", placeholder: 'Give your event a short and clear name', class: "form-control" %>
     </div>
 
-    <div>
-      <span>Location </span>
+    <div id="location">
+      <div class="control-label" style="padding-top: 25px;">Location </div>
       <%= radio_button_tag(:offline, true) %>
       <%= label_tag(:offline, "Enter address") %>
       <%= radio_button_tag(:offline, false) %>
@@ -70,6 +70,8 @@
     <div class='field'>
       <%= f.input :organization_id, collection: current_user.organizations, placeholder: "Select existing Organizations", selected: current_user.organizations.first %>
     </div>
+    <!-- <div style="font-size: 12; color: #2e73af"><p>Add New Organization</p></div> -->
+
     <!-- END Organization -->
 
     <div class="actions">
