@@ -28,6 +28,30 @@
     background: #AED581;
   }
 }
+
+.btn-submit {
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-white {
+  background-color: white;
+  border: 1px solid #ddd;
+  transition: all 200ms ease;
+
+  a {
+    color: grey;
+    &:hover {
+      color: grey;
+    }
+  }
+
+  &:hover {
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+}
+
 @media only screen and (min-width: 480px) and (max-width: 767px){
   .btn-treehouse {
     border-radius: 0px;

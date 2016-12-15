@@ -1,18 +1,21 @@
 <% unless params[:search] %>
-  <%= render "banner" %>
+<%= render "banner" %>
 <% end %>
+<div class="text-center">
+  <h2 style="font-weight: 300">Find events near you!</h2>
+</div>
 <div class="container">
   <div class="row">
     <% if params[:search] %>
-      <% @public_events.each do |pe| %>
-        <% if pe.searchable.public %>
-          <div class="col-xs-12 col-sm-4" style="margin-top: 12px;">
-            <%= render "pages/event", event: pe %>
-          </div>
-        <% end %>
-      <% end %>
+    <% @public_events.each do |pe| %>
+    <% if pe.searchable.public %>
+    <div class="col-xs-12 col-sm-4" style="margin-top: 12px;">
+      <%= render "pages/event", event: pe %>
+    </div>
+    <% end %>
+    <% end %>
     <% else %>
-        <%= render "events/event" %>
+    <%= render "events/event" %>
     <% end %>
   </div>
   <div class="button">

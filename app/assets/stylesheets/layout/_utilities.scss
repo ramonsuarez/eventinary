@@ -23,3 +23,18 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+.container-lg {
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
