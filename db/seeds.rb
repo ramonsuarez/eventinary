@@ -155,7 +155,7 @@ o1 = Organization.create!(
 o1.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
 #adding user to organization - I have used the same user for all organizations,
 # but different organizations created different event - I haven't tested the dashboard
-o1.user = u4
+o1.user = u1
 o1.save
 
 p "Organization id #{o1.id}"
@@ -169,6 +169,8 @@ o2 = Organization.create!(
 )
 
 o2.logo =  open("http://railsgirls.com/images/brussels/betacowork-coworking.png", "r")
+o2.user = u2
+
 o2.save
 
 p "Organization id #{o2.id}"
@@ -182,6 +184,7 @@ o3 = Organization.create!(
 )
 
 o3.logo =  open("http://www.bene.be/images/uploads/blog/cache/work-logo-500-01-500x353.png", "r")
+o3.user = u3
 o3.save
 
 p "Organization id #{o3.id}"
@@ -200,7 +203,8 @@ Fintech Belgium is a federation for and by its members.",
   phone: "(+32) 479 27 29 29"
 )
 
-o4.logo =  open("http://fintechbelgium.be/wp-content/uploads/2016/08/Meetup_roboadvisor_1-1024x512-480x240.jpg", "r")
+o4.logo =  open("https://pbs.twimg.com/media/CwQ6ljHWYAAsO5h.jpg", "r")
+o4.user = u4
 o4.save
 
 p "Organization id #{o4.id}"
@@ -215,6 +219,7 @@ o5 = Organization.create!(
 )
 
 o5.logo =  open("http://www.technologium.be/wp-content/uploads/2015/03/logo-f800df98aa2605c552400667353f47d2.png", "r")
+o5.user = u9
 o5.save
 
 p "Organization id #{o5.id}"
@@ -240,7 +245,7 @@ p "Organization id #{o5.id}"
    price: 0
  )
 
-e1.image =  open("http://www.westartup.eu/wp-content/uploads/2015/08/SW-FinTech-Cover-foto.jpg", "r")
+e1.image =  open("https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/3/b/e/3/highres_446295331.jpeg", "r")
 #adding an organization to an event
 e1.organization = o1
 e1.save
@@ -613,18 +618,3 @@ b13 = Booking.create(
   )
 b13.save
 p "Booking id #{b13.id}"
-
-
-#######
-# Link orgs to users
-#######
-o1.user = u1
-o2.user = u2
-o3.user = u3
-o4.user = u4
-o5.user = u5
-o1.save
-o2.save
-o3.save
-o4.save
-o5.save
