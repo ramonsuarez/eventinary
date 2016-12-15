@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <d class="row">
+        <h1><%= @event.title %></h1>
+        <h4><%= @event.organization.name unless @event.organization.nil? %></h4>
+        <p><%= @event.start.strftime("%m/%d/%Y at %I:%M%p") %></p>
+
+        <h6><%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %></h6>
+
+        <%= link_to "Event Details", event_path(@event), class: "btn btn-primary" %>
+      </d>
+
+<div style="border-top: 1px solid rgba(0,0,0,0.1); padding: 15px 15px;"></div>
+  <div class="row">
+    <h2>Event Dashboard</h2>
+    <div class="col-md-8 wrapper-tickets">
+      <ul class="collection">
+        <h3>List of Attendants</h3>
+        <% @event.bookings.each do |booking| %>
+        <div class="row">
+        <div class="col-md-12">
+            <li class="collection-item">
+              <%= cl_image_tag booking.user.avatar.path %>
+              <p><%= booking.user.full_name %></p>
+              <%= check_box_tag("attended", "yes", booking.attended)%>
+            </li>
+          </div>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <div class="wrapper-tickets">
+        <h3>Tickets Summary</h3>
+        <p>Tickets created: <%= @event.quantity %></p>
+        <p>Tickets booked: <%= @event.bookings.count %> tickets</p>
+        <p>Remaining Tickets: <%= @event.quantity - @event.bookings.count %></p>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
