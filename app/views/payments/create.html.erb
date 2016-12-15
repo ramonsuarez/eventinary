@@ -1,5 +1,14 @@
 <!-- Stripe success page -->
 <div class="events-sucess-page">
   <h1>🎉</h1>
-  <h2>Your ticket is confirmed!</h2>
+  <h2>Your booking is confirmed!</h2>
+  <%= "Here's a recap of your event: " %>
+  <ul class="text-left ">
+    <li><%= @booking.event.title%></li>
+    <li><%= @booking.event.start.strftime("Starts at %H:%M on %A, %d-%B-%y") %></li>
+    <li><%= @booking.event.start.strftime("Ends at %H:%M on %A, %d-%B-%y") %></li>
+    <li>"Venue: #{<%= @booking.event.venue%>}"</li>
+    <li>"Address: <%= @booking.event.address%></li>
+  </ul>
+  <h5><%= link_to "Add to your calendar", "#", class: "btn btn-primary" %></h5>
 </div>
