@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="banner-content">
     <h1>Attending Events Rewarded</h1>
-    <p>Improved attendance to events</p>
+    <p>Free events for those that attend</p>
     <% unless user_signed_in? %>
       <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-primary btn-lg" %>
       <% end %>
