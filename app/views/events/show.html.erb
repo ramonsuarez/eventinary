@@ -106,9 +106,7 @@
             <p><%= @event.price %></p>
           </div>
         </div>
-
-        <%= social_share_button_tag(@event.title) %>
-
+    <%= social_share_button_tag("Invitation to " + @event.title, :url => "Hi!\n\nHere is an interesting event for you: " + event_url(@event) + "\n\n#{@event.description}\n\nSee you there!") %>
       </div>
     </div>
 
