@@ -20,8 +20,10 @@
   z-index: 20;
 
   &:link, &:visited {
-    color: #C5E1A5;
-    background: #8BC34A;
+    color: #fff;
+    background-color: #FCB215;
+    border-color: #f4a703
+
   }
   &:hover, &:active {
     color: white;

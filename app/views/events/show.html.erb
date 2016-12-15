@@ -117,7 +117,7 @@
     <% if @event.offline == true %>
       <a name="map"></a>
       <a href="https://www.google.com/maps/dir//<%= @event.address %>/" target="_blank">
-        <div style="min-height: 500px; background: url('http://maps.google.com/maps/api/staticmap?center=<%= @event.address %>&zoom=15&size=640x640&maptype=roadmap&markers=color:ORANGE|label:A|<%= @event.address %>&sensor=false') center no-repeat; min-width:1000px;"></div>
+        <div style="min-height: 500px; background: url('http://maps.google.com/maps/api/staticmap?center=<%= @event.address %>&zoom=15&size=640x640&maptype=roadmap&markers=color:ORANGE|label:A|<%= @event.address %>&sensor=false') center no-repeat; width:100%;"></div>
       </a>
     <% end %>
   </section>
