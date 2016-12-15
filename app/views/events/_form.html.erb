@@ -60,11 +60,11 @@
   </div>
 
   <div class="field">
-    <%= f.input :quantity, type: :number %>
+    <%= f.input :quantity, type: :number, label: "Number of tickets" %>
   </div>
 
   <div class="field">
-    <%= f.input :penalty_fee, placeholder: "No show charge", type: :number %>
+    <%= f.input :penalty_fee, label: "No show charge", type: :number %>
   </div>
 
 
@@ -82,11 +82,10 @@
   <!-- BEGIN Organization -->
   <div class='field'>
     <%= f.input :organization_id, collection: current_user.organizations, placeholder: "Select existing Organizations" %>
-    <%= link_to "+ Add New Organization", new_organization_path, class: "text-center" %>
   </div>
   <!-- END Organization -->
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, "CREATE EVENT", class: "navbar-wagon-button btn-submit"  %>
   </div>
 <% end %>
