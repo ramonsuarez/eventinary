@@ -15,7 +15,7 @@ u1 = User.create(
   last_name: "Duchateau",
   address: "Rue de peres blancs 4, 1040, Etterbeek, Brussels, Belgium",
   phone: "+3212345678",
-  email:"michel@test.com",
+  email:"michel@eventinary.com",
   password: "michelduchateau"
   )
 u1.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAARLAAAAJGEwOWFmMWIyLTQzNDMtNGMwNy1hYzQyLTQ2ZGVlMWVjNDFiNQ.jpg", "r")
@@ -28,7 +28,7 @@ u2 = User.create(
   last_name: "Magnabosco",
   address: "rue de pères blancs 4, 1040, brussels",
   phone: "+32 2 737 67 69",
-  email:"sara@test.com",
+  email:"sara@eventinary.com",
   password: "saramagnabosco"
   )
 u2.avatar =  open("https://media.licdn.com/media/AAEAAQAAAAAAAAgpAAAAJDI2ZjY1M2I5LTVmNmMtNDM0ZS05MjI5LTA2OWVhZjI1Y2ZiOA.jpg", "r")
@@ -54,7 +54,7 @@ u4 = User.create(
   last_name: "Gambrill - Guion",
   address: "Rue Jules Cockx-straat, 8-10 bte2 – 1160 Brussels",
   phone: "(+32) 479 27 29 29",
-  email:"alessandra@test.com",
+  email:"alessandra@eventinary.com",
   password: "alessandragambrill"
   )
 u4.avatar =  open("https://media.licdn.com/media/p/1/000/101/03e/2f8e95c.jpg", "r")
@@ -117,21 +117,21 @@ u9 = User.create(
   first_name: "Anne",
   last_name: "Collet",
   address: "Place St. Gudule 5, 1000, Brussels",
-  phone: "(+32) 98765432",
-  email:"anne@test.com",
+  phone: "(+32) 476 785 764",
+  email:"anne@lewagon.org",
   password: "annecollet"
   )
 u9.avatar =  open("https://a248.e.akamai.net/secure.meetupstatic.com/photos/member/4/1/8/e/member_222256782.jpeg", "r")
 u9.save
 
-p "User id #{u7.id}"
+p "User id #{u9.id}"
 
 u10 = User.create(
   first_name: "Martin",
   last_name: "Van Aken",
   address: "Internet, Brussels",
   phone: "(+32) 123456973",
-  email:"martin@test.com",
+  email:"martin@eventinary.com",
   password: "martinvanaken"
   )
 u10.avatar =  open("https://pbs.twimg.com/profile_images/378800000551111238/934851994d52ee9f4d7dab8a5c7420c9_400x400.png", "r")
@@ -153,7 +153,7 @@ o1 = Organization.create!(
 )
 
 o1.logo =  open("http://brussels.startupweekend.org/files/2014/05/SWBRU_Logo1-1024x390.jpg", "r")
-#adding user to organization - I have used the same user for all organizations, 
+#adding user to organization - I have used the same user for all organizations,
 # but different organizations created different event - I haven't tested the dashboard
 o1.user = u4
 o1.save
@@ -323,6 +323,7 @@ price: 0
 )
 
 e4.image =  open("http://fintechbelgium.be/2016/11/18/fintechs-can-lower-customer-acquisition-cost-meetup/", "r")
+e4.organization = o4
 e4.save
 
 p "Event id #{e4.id}"
@@ -348,6 +349,7 @@ Erik de Herdt will answer to all these questions.",
  )
 
 e5.image =  open("http://www.betacowork.com/wp-content/uploads/law-400x267.jpg", "r")
+e5.organization = o2
 e5.save
 
 p "Event id #{e5.id}"
@@ -394,6 +396,7 @@ This meetup is organised and sponsored by Betacowork, ICAB and MAD Kings. Thanks
  )
 
 e6.image =  open("http://abdevlabs.com/wp-content/uploads/2014/02/growth-hacker-funnel.jpg", "r")
+e6.organization = o2
 e6.save
 
 p "Event id #{e6.id}"
@@ -422,6 +425,7 @@ Trouver le bon #
  )
 
 e7.image =  open("http://www.betacowork.com/wp-content/uploads/Instagram_App_Large_May2016_200.png", "r")
+e7.organization = o2
 e7.save
 
 p "Event id #{e7.id}"
@@ -444,6 +448,7 @@ CreativeMornings Brussels aims to bring together people from these different com
  )
 
 e8.image =  open("http://www.project668.org/wp-content/uploads/Creative-mornings-brussels.jpg", "r")
+e8.organization = o2
 e8.save
 
 p "Event id #{e8.id}"
@@ -472,6 +477,7 @@ Ygal Levy is in charge of the development of Bird Office in Belgium for the past
  )
 
 e9.image =  open("http://www.betacowork.com/wp-content/uploads/secretary-1149302_640-400x283.jpg", "r")
+e9.organization = o2
 e9.save
 
 p "Event id #{e9.id}"
@@ -517,7 +523,7 @@ p "Booking id #{b3.id}"
 b4 = Booking.create(
   attended: false,
   cancelled: true,
-  user_id: u2.id,
+  user_id: u4.id,
   event_id: e4.id
   )
 
@@ -525,33 +531,100 @@ b4.save
 
 p "Booking id #{b4.id}"
 
-b = Booking.create(
+b5 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u2.id,
+  event_id: e5.id
+  )
+b5.save
+p "Booking id #{b5.id}"
+
+b6 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u2.id,
+  event_id: e1.id
+  )
+b6.save
+p "Booking id #{b6.id}"
+
+b7 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u3.id,
+  event_id: e1.id
+  )
+b7.save
+p "Booking id #{b7.id}"
+
+b8 = Booking.create(
   attended: false,
   cancelled: true,
   user_id: u4.id,
-  event_id: e2.id
+  event_id: e1.id
   )
-b.save
-p "Booking id #{b.id}"
+b8.save
+p "Booking id #{b8.id}"
+
+b9 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u5.id,
+  event_id: e1.id
+  )
+b9.save
+p "Booking id #{b9.id}"
+
+
+b10 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u6.id,
+  event_id: e1.id
+  )
+b10.save
+p "Booking id #{b10.id}"
+
+
+b11 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u7.id,
+  event_id: e1.id
+  )
+b11.save
+p "Booking id #{b11.id}"
+
+b12 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u8.id,
+  event_id: e1.id
+  )
+b12.save
+p "Booking id #{b12.id}"
+
+b13 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u9.id,
+  event_id: e1.id
+  )
+b13.save
+p "Booking id #{b13.id}"
 
 
 #######
-# Link events to orgs
+# Link orgs to users
 #######
-
-e1.organization = o1
-e2.organization = o2
-e3.organization = o3
-e1.save
-e2.save
-e3.save
-
-#######
-# Link orgs to test user
-#######
-o1.user = u4
-o2.user = u4
-o3.user = u1
+o1.user = u1
+o2.user = u2
+o3.user = u3
+o4.user = u4
+o5.user = u5
 o1.save
 o2.save
 o3.save
+o4.save
+o5.save
