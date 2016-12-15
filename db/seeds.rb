@@ -327,7 +327,7 @@ public: true,
 price: 0
 )
 
-e4.image =  open("http://fintechbelgium.be/2016/11/18/fintechs-can-lower-customer-acquisition-cost-meetup/", "r")
+e4.image =  open("https://pbs.twimg.com/media/CwQ6ljHWYAAsO5h.jpg", "r")
 e4.organization = o4
 e4.save
 
