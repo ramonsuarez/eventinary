@@ -18,7 +18,7 @@
 
       <div class="navbar-wagon-item">
         <div class="dropdown">
-        <div class="navbar-wagon-menu" style="background-size:cover;background-position:center;border-radius:50%;background-image: url('<%= cloudinary_path + @user.avatar.path %>');width:40px;height:40px;" data-toggle="dropdown"></div>
+        <div class="navbar-wagon-menu" style="background-size:cover;background-position:center;border:1px solid grey;border-radius:50%;background-image: url('<%= cloudinary_path + @user.avatar.path if @user.avatar %>');width:40px;height:40px;" data-toggle="dropdown"></div>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
