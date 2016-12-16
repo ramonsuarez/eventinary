@@ -1,80 +1,76 @@
 <%= simple_form_for event do |f| %>
+  <div class="field">
+    <%= f.input :title, label: "Event Name", placeholder: 'Give your event a short and clear name', class: "form-control" %>
+  </div>
 
-    <div class="field">
-      <%= f.input :title, label: "Event Name", placeholder: 'Give your event a short and clear name', class: "form-control" %>
-    </div>
+  <div id="location">
+    <div class="control-label" style="padding-top: 25px;">Location </div>
+    <%= radio_button_tag(:offline, true) %>
+    <%= label_tag(:offline, "Enter address", style: "border:0; background-color:transparent;") %>
+    <%= radio_button_tag(:offline, false) %>
+    <%= label_tag(:offline, "Online event", style: "border:0; background-color:transparent;") %>
 
-    <div id="location">
-      <div class="control-label" style="padding-top: 25px;">Location </div>
-      <%= radio_button_tag(:offline, true) %>
-      <%= label_tag(:offline, "Enter address") %>
-      <%= radio_button_tag(:offline, false) %>
-      <%= label_tag(:offline, "Online event") %>
-
-      <div class="online-fields">
-        <div class="field">
-          <%= f.input :online_url, placeholder: "Enter the event's website", label: false, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="offline-fields">
-        <div class="field">
-          <%= f.input :venue, placeholder: "Venue Name", class: "form-control" %>
-        </div>
-
-        <div class="field">
-          <%= f.input :address, placeholder: "Address", input_html: { class: "form-control js-search-autocomplete" } %>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="field">
-      <%= f.input :start, as: :datetime, label: "Starts" %>
-    </div>
-
-    <div class="field">
-      <%= f.input :end, as: :datetime, label: "Ends" %>
-    </div>
-
-    <div class="field">
-      <%= f.input :image, as: :attachinary %>
-    </div>
-
-
-    <div class="field">
-      <%= f.input :description, as: :bootsy, class: "form-control" %>
-    </div>
-
-    <div class="row">
-      <div class="field col-xs-6 col-md-6">
-        <%= f.input :quantity, type: :number, label: "Number of tickets" %>
-      </div>
-
-      <div class="field col-xs-6 col-md-6">
-        <%= f.input :penalty_fee, label: "No show charge" %>
+    <div class="online-fields">
+      <div class="field">
+        <%= f.input :online_url, placeholder: "Enter the event's website", label: false, class: "form-control" %>
       </div>
     </div>
 
+    <div class="offline-fields">
+      <div class="field">
+        <%= f.input :venue, placeholder: "Venue Name", class: "form-control" %>
+      </div>
 
-    <div class="field">
-      <%= f.input :cancellation_policy, collection: cancellation_policy_collection, as: :radio_buttons %>
+      <div class="field">
+        <%= f.input :address, placeholder: "Address", input_html: { class: "form-control js-search-autocomplete" } %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.input :public, label: "This is a public event" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :start, as: :datetime, label: "Starts" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :end, as: :datetime, label: "Ends" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :image, as: :attachinary %>
+  </div>
+
+  <div class="field">
+    <%= f.input :description, as: :bootsy, class: "form-control", :style => "resize:y" %>
+  </div>
+
+  <div class="row">
+    <div class="field col-xs-6 col-md-6">
+      <%= f.input :quantity, type: :number, label: "Number of tickets" %>
     </div>
 
-    <!-- BEGIN Organization -->
-    <div class='field'>
-      <%= f.input :organization_id, collection: current_user.organizations, placeholder: "Select existing Organizations", selected: current_user.organizations.first %>
+    <div class="field col-xs-6 col-md-6">
+      <%= f.input :penalty_fee, label: "No show charge" %>
     </div>
-    <!-- <div style="font-size: 12; color: #2e73af"><p>Add New Organization</p></div> -->
+  </div>
 
-    <!-- END Organization -->
+  <div class="field">
+    <%= f.input :cancellation_policy, collection: cancellation_policy_collection, as: :radio_buttons %>
+  </div>
 
-    <div class="actions">
-      <%= f.button :submit, "CREATE EVENT", class: "navbar-wagon-button btn-submit", style: 'margin-left: 0px; padding: 5px;'  %>
-    </div>
-    <% end %>
+  <div class="field">
+    <%= f.input :public, label: "This is a public event" %>
+  </div>
+
+  <!-- BEGIN Organization -->
+  <div class='field'>
+    <%= f.input :organization_id, collection: current_user.organizations, placeholder: "Select existing Organizations", selected: current_user.organizations.first %>
+  </div>
+  <!-- <div style="font-size: 12; color: #2e73af"><p>Add New Organization</p></div> -->
+
+  <!-- END Organization -->
+
+  <div class="actions">
+    <%= f.button :submit, "CREATE EVENT", class: "navbar-wagon-button btn-submit", style: 'margin-left: 0px; padding: 5px;'  %>
+  </div>
+<% end %>
