@@ -18,6 +18,12 @@
     <div class="col-md-8 wrapper-tickets">
       <ul class="collection">
         <h3>Attended</h3>
+          <% if @event.bookings == [] %>
+          <h4>No attendees yet? Share your event! </h4>
+          <h6><%= social_share_button_tag("Invitation to " + @event.title, :url => "Hey!\n\nI thought that this event would be interesting for you: " + @event.title + "\n\nThis is the description of the event: \n\n#{@event.description}" + "\n\n\You can subscribe here: " + event_url(@event) + "\n\nSee you there? :)") %></h6>
+
+          <% else %>
+
         <% @event.bookings.each do |booking| %>
         <div class="row">
           <div class="col-md-12">
@@ -30,6 +36,7 @@
           </div>
         <% end %>
       </ul>
+      <% end %>
     </div>
     <div class="col-md-4">
       <div class="wrapper-tickets">
