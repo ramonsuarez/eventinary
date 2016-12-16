@@ -17,7 +17,10 @@
   <div class="row">
     <div class="col-md-8 wrapper-tickets">
       <ul class="collection">
-        <h3>Attended</h3>
+        <div class="row">
+        <h3 class="col-xs-6" style="border-bottom:0;">Attended</h3>
+        <h6 class="col-xs-6 text-right" style="margin-top: 40px;">Check Attended</h6>
+        </div>
           <% if @event.bookings == [] %>
           <h4>No attendees yet? Share your event! </h4>
           <h6><%= social_share_button_tag("Invitation to " + @event.title, :url => "Hey!\n\nI thought that this event would be interesting for you: " + @event.title + "\n\nThis is the description of the event: \n\n#{@event.description}" + "\n\n\You can subscribe here: " + event_url(@event) + "\n\nSee you there? :)") %></h6>
