@@ -82,7 +82,7 @@ u6 = User.create(
   email:"lu.diehl@gmail.com",
   password: "lucianadiehl"
   )
-u6.avatar =  open("https://media.licdn.com/media/p/1/000/101/03e/2f8e95c.jpg", "r")
+u6.avatar =  open("https://avatars1.githubusercontent.com/u/22883140?v=3&s=400", "r")
 u6.save
 
 p "User id #{u6.id}"
@@ -95,7 +95,7 @@ u7 = User.create(
   email:"luay985@gmail.com",
   password: "luayadam"
   )
-u7.avatar =  open("https://lh3.googleusercontent.com/-PoF9r7-MiW4/U_7CfWwYYjI/AAAAAAAAAYI/NWIrjEbuZ7A/w640-h400-p-k/jim-parsons-2013-primetime-emmy-awards.jpg", "r")
+u7.avatar =  open("https://ramonsuarez.files.wordpress.com/2200/03/luay.jpg", "r")
 u7.save
 
 p "User id #{u7.id}"
@@ -108,7 +108,7 @@ u8 = User.create(
   email:"r.dugzino@gmail.com ",
   password: "dugagjinramani"
   )
-u8.avatar =  open("http://alumni.lewagon.org/dugzino", "r")
+u8.avatar =  open("https://avatars2.githubusercontent.com/u/3817430?v=3&s=400", "r")
 u8.save
 
 p "User id #{u8.id}"
@@ -214,7 +214,7 @@ o5 = Organization.create!(
   name: "Le Wagon Brussels",
   url: "https://www.lewagon.com/brussels",
   description: "Working as a junior developer for Stripe, Algolia, Molotov, Save, Compass, 55, Save, etc.. We will help you find your dream job, either as a junior dev, product manager or growth hacker. Discuss with any of our alumni to find out more!",
-  email: "test@lewagon.org",
+  email: "anne@lewagon.org",
   phone: "(+32) 479 27 29 29"
 )
 
@@ -223,6 +223,34 @@ o5.user = u9
 o5.save
 
 p "Organization id #{o5.id}"
+
+o6 = Organization.create!(
+  name: "Code Station SPRL",
+  url: "https://www.lewagon.com/brussels",
+  description: "Programming education and promotion",
+  email: "anne@lewagon.org",
+  phone: "(+32) 479 27 29 29"
+)
+
+o6.logo =  open("http://www.technologium.be/wp-content/uploads/2015/03/logo-f800df98aa2605c552400667353f47d2.png", "r")
+o6.user = u9
+o6.save
+
+p "Organization id #{o6.id}"
+
+o7 = Organization.create!(
+  name: "Techies Lab",
+  url: "http://techieslab.org",
+  description: "We teach kids to code webpages with their parents",
+  email: "anne@techieaslab.org",
+  phone: "(+32) 479 27 29 29"
+)
+
+o7.logo =  open("http://techieslab.org/assets/images/logo/robot-1d741827.png", "r")
+o7.user = u9
+o7.save
+
+p "Organization id #{o7.id}"
 
 
 ###########
@@ -245,7 +273,7 @@ p "Organization id #{o5.id}"
    price: 0
  )
 
-e1.image =  open("https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/3/b/e/3/highres_446295331.jpeg", "r")
+e1.image =  open("https://ramonsuarez.files.wordpress.com/2200/03/fintech.jpg", "r")
 #adding an organization to an event
 e1.organization = o1
 e1.save
@@ -429,7 +457,7 @@ Trouver le bon #
    price: 0
  )
 
-e7.image =  open("http://www.betacowork.com/wp-content/uploads/Instagram_App_Large_May2016_200.png", "r")
+e7.image =  open("https://ramonsuarez.files.wordpress.com/2200/03/instagram.jpg", "r")
 e7.organization = o2
 e7.save
 
@@ -486,6 +514,29 @@ e9.organization = o2
 e9.save
 
 p "Event id #{e9.id}"
+
+e10 = Event.create(
+   title: "Demo Day Brussels #45" ,
+   offline: true,
+   venue: "Le Wagon",
+   address: "Parvis Sainte-Gudule 5, 1000 Bruxelles",
+   start: "Fri, 16 Oct 2016 18:00:00 UTC +00:00",
+   end: "Fri, 16 Oct 2016 21:00:00 UTC +00:00",
+   description: "On Friday, December 16, the last day of the bootcamp, they will showcase their apps in front of a large audience (investors, journalists, other startup founders, experienced developers, YOU...).
+
+We will then celebrate the end of this journey (and this year!🎄) and most importantly new beginnings, surrounded by great company & drinks! ",
+   quantity: 20,
+   penalty_fee: 35,
+   cancellation_policy: "Moderate",
+   public: true,
+   price: 0
+ )
+
+e10.image =  open("https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/7/2/d/c/600_456509404.jpeg", "r")
+e10.organization = o5
+e10.save
+
+p "Event id #{e10.id}"
 
 
 ###########
@@ -618,3 +669,93 @@ b13 = Booking.create(
   )
 b13.save
 p "Booking id #{b13.id}"
+
+b14 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u1.id,
+  event_id: e10.id
+  )
+b14.save
+p "Booking id #{b14.id}"
+
+b15 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u2.id,
+  event_id: e10.id
+  )
+b15.save
+p "Booking id #{b15.id}"
+
+b16 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u3.id,
+  event_id: e10.id
+  )
+b16.save
+p "Booking id #{b16.id}"
+
+b17 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u4.id,
+  event_id: e10.id
+  )
+b17.save
+p "Booking id #{b17.id}"
+
+b18 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u5.id,
+  event_id: e10.id
+  )
+b18.save
+p "Booking id #{b18.id}"
+
+b19 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u6.id,
+  event_id: e10.id
+  )
+b19.save
+p "Booking id #{b19.id}"
+
+b20 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u7.id,
+  event_id: e10.id
+  )
+b20.save
+p "Booking id #{b20.id}"
+
+b21 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u8.id,
+  event_id: e10.id
+  )
+b21.save
+p "Booking id #{b21.id}"
+
+b22 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u9.id,
+  event_id: e10.id
+  )
+b22.save
+p "Booking id #{b22.id}"
+
+b23 = Booking.create(
+  attended: false,
+  cancelled: true,
+  user_id: u10.id,
+  event_id: e10.id
+  )
+b23.save
+p "Booking id #{b23.id}"
