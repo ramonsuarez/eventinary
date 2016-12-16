@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Playfair+Display:900|Raleway' %>
+    <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag 'application' %>
   </head>
   <body class="site">
     <%= render 'shared/navbar' %>
@@ -17,8 +19,6 @@
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= cloudinary_js_config %>
   </body>
 </html>
