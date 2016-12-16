@@ -39,7 +39,7 @@ p "User id #{u2.id}"
 u3 = User.create(
   first_name: "Gabriela",
   last_name: "Fernandez",
-  address: "Rue de peres blancs 4, brussels",
+  address: "Rue de peres blancs 4, 1040, Etterbeek, Brussels, Belgium",
   phone: "+322 7376772",
   email:"gabriela@startups.be",
   password: "gabrielafernandez"
@@ -65,7 +65,7 @@ p "User id #{u4.id}"
 u5 = User.create(
   first_name: "Ramon",
   last_name: "Suarez",
-  address: "Rue de peres blancs 4, 1040, Brussels",
+  address: "Rue de peres blancs 4, 1040, Etterbeek, Brussels, Belgium",
   phone: "(+32) 2 7376769",
   email:"ramon@betacowork.com",
   password: "ramonsuarez"
